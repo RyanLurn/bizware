@@ -8,11 +8,29 @@
     "lint:fix": "bunx eslint --cache --fix",
     "check": "bun run check-types && bun run lint"
   },
+  "dependencies": {
+    "@bizware/common": "workspace:*",
+    "@bizware/error": "workspace:*",
+    "@bizware/ui": "workspace:*",
+    "@tanstack/react-router": "catalog:tanstack",
+    "@tanstack/react-start": "catalog:tanstack",
+    "lucide-react": "catalog:ui",
+    "react": "catalog:ui",
+    "react-dom": "catalog:ui",
+    "zod": "catalog:"
+  },
   "devDependencies": {
     "@bizware/eslint": "workspace:*",
+    "@bizware/types": "workspace:*",
     "@bizware/typescript": "workspace:*",
+    "@tailwindcss/vite": "catalog:vite",
     "@types/bun": "catalog:types",
+    "@types/react": "catalog:types",
+    "@types/react-dom": "catalog:types",
+    "@vitejs/plugin-react": "catalog:vite",
     "eslint": "catalog:",
-    "typescript": "catalog:"
+    "tailwindcss": "catalog:ui",
+    "typescript": "catalog:",
+    "vite": "catalog:vite"
   }
 }

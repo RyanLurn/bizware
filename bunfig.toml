@@ -1,6 +1,6 @@
 [install]
-# Only install package versions published at least 30 days ago
-minimumReleaseAge = 2592000 # seconds
+# Only install package versions published at least 7 days ago
+minimumReleaseAge = 604800 # seconds
 
 # Exclude trusted packages from the age gate
 minimumReleaseAgeExcludes = ["@types/bun", "typescript", "@base-ui/react"]
