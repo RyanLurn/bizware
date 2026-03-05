@@ -45,7 +45,6 @@
     "format:check": "bunx prettier . --check",
     "check": "bun run check-types && bun run lint && bun run format:check",
     "sync-hooks": "bunx lefthook install",
-    "common:build": "bun --elide-lines 0 --filter @bizware/common build",
     "types:build": "bun --elide-lines 0 --filter @bizware/types build",
     "error:build": "bun --elide-lines 0 --filter @bizware/error build",
     "ui:add": "bun --elide-lines 0 --filter @bizware/ui shadcn:add"
