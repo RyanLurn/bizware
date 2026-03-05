@@ -1,0 +1,6 @@
+export const PORTS = {
+  PAGE_RENDERER: 5175,
+  SITE_BUILDER: 5174,
+  AUTH_SERVICE: 3001,
+  DASHBOARD: 5173,
+} as const;
