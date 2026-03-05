@@ -3,4 +3,4 @@
 minimumReleaseAge = 2592000 # seconds
 
 # Exclude trusted packages from the age gate
-minimumReleaseAgeExcludes = ["@types/bun", "typescript"]
+minimumReleaseAgeExcludes = ["@types/bun", "typescript", "@base-ui/react"]
