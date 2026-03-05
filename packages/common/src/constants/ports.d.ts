@@ -1,3 +1,3 @@
-declare const DASHBOARD_PORT = 5173;
+declare const MAIN_APP_PORT = 5173;
 
-export { DASHBOARD_PORT };
+export { MAIN_APP_PORT };

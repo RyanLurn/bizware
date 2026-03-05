@@ -1,5 +1,5 @@
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
-import { DASHBOARD_PORT } from "@bizware/common/ports";
+import { MAIN_APP_PORT } from "@bizware/common/ports";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
@@ -18,6 +18,6 @@ export default defineConfig({
     },
   },
   server: {
-    port: DASHBOARD_PORT,
+    port: MAIN_APP_PORT,
   },
 });

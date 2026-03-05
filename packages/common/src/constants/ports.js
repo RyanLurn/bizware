@@ -1,1 +1,1 @@
-export const DASHBOARD_PORT = 5173;
+export const MAIN_APP_PORT = 5173;
