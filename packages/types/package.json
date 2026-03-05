@@ -1,0 +1,28 @@
+{
+  "name": "@bizware/types",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "bunx tsdown",
+    "build:watch": "bunx tsdown --watch",
+    "try": "bun run test/try.ts",
+    "check-types": "bunx tsc --noEmit",
+    "lint": "bunx eslint --cache",
+    "lint:fix": "bunx eslint --cache --fix",
+    "check": "bun run check-types && bun run lint"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.mts"
+    }
+  },
+  "devDependencies": {
+    "@bizware/eslint": "workspace:*",
+    "@bizware/typescript": "workspace:*",
+    "@types/bun": "catalog:types",
+    "eslint": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  }
+}
