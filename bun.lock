@@ -82,17 +82,6 @@
         "typescript": "catalog:",
       },
     },
-    "packages/types": {
-      "name": "@bizware/types",
-      "devDependencies": {
-        "@bizware/eslint": "workspace:*",
-        "@bizware/typescript": "workspace:*",
-        "@types/bun": "catalog:types",
-        "eslint": "catalog:",
-        "tsdown": "catalog:",
-        "typescript": "catalog:",
-      },
-    },
     "packages/ui": {
       "name": "@bizware/ui",
       "dependencies": {
@@ -229,8 +218,6 @@
     "@bizware/error": ["@bizware/error@workspace:packages/error"],
 
     "@bizware/eslint": ["@bizware/eslint@workspace:configs/eslint"],
-
-    "@bizware/types": ["@bizware/types@workspace:packages/types"],
 
     "@bizware/typescript": ["@bizware/typescript@workspace:configs/typescript"],
 
