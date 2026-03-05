@@ -1,5 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@bizware/typescript/base.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
   "include": ["src/**/*", "eslint.config.js"]
 }
