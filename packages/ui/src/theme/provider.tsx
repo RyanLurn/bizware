@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import type { UserTheme } from "@/theme/schemas";
 
-import { handleThemeChange, getSystemTheme } from "@/theme/helpers";
+import { handleThemeChange, getSystemTheme } from "@/theme/utils";
 import { getStoredTheme, setStoredTheme } from "@/theme/storage";
 import { UserThemeSchema } from "@/theme/schemas";
 import { ThemeContext } from "@/theme/context";
