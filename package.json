@@ -2,10 +2,36 @@
   "name": "bizware",
   "type": "module",
   "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "catalog": {
+      "eslint": "^10.0.2",
+      "tsdown": "^0.20.3",
+      "typescript": "^5.9.3",
+      "zod": "^4.3.6"
+    },
+    "catalogs": {
+      "types": {
+        "@types/bun": "^1.3.10"
+      }
+    }
   },
-  "peerDependencies": {
-    "typescript": "^5"
-  }
+  "scripts": {
+    "check-types": "bun run --parallel --workspaces --if-present --no-exit-on-error check-types",
+    "lint": "bun run --parallel --workspaces --if-present --no-exit-on-error lint",
+    "lint:fix": "bun run --parallel --workspaces --if-present --no-exit-on-error lint:fix",
+    "format": "bunx prettier . --write",
+    "format:check": "bunx prettier . --check",
+    "check": "bun run check-types && bun run lint && bun run format:check",
+    "sync-hooks": "bunx lefthook install"
+  },
+  "devDependencies": {
+    "lefthook": "^2.0.16",
+    "prettier": "3.8.1",
+    "prettier-plugin-curly": "0.4.1"
+  },
+  "packageManager": "bun@1.3.10"
 }
