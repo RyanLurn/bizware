@@ -11,6 +11,16 @@
         "prettier-plugin-tailwindcss": "0.7.2",
       },
     },
+    "apps/dashboard": {
+      "name": "@bizware/dashboard",
+      "devDependencies": {
+        "@bizware/eslint": "workspace:*",
+        "@bizware/typescript": "workspace:*",
+        "@types/bun": "catalog:types",
+        "eslint": "catalog:",
+        "typescript": "catalog:",
+      },
+    },
     "configs/eslint": {
       "name": "@bizware/eslint",
       "devDependencies": {
@@ -183,6 +193,8 @@
     "@base-ui/utils": ["@base-ui/utils@0.2.5", "", { "dependencies": { "@babel/runtime": "^7.28.6", "@floating-ui/utils": "^0.2.10", "reselect": "^5.1.1", "use-sync-external-store": "^1.6.0" }, "peerDependencies": { "@types/react": "^17 || ^18 || ^19", "react": "^17 || ^18 || ^19", "react-dom": "^17 || ^18 || ^19" }, "optionalPeers": ["@types/react"] }, "sha512-oYC7w0gp76RI5MxprlGLV0wze0SErZaRl3AAkeP3OnNB/UBMb6RqNf6ZSIlxOc9Qp68Ab3C2VOcJQyRs7Xc7Vw=="],
 
     "@bizware/common": ["@bizware/common@workspace:packages/common"],
+
+    "@bizware/dashboard": ["@bizware/dashboard@workspace:apps/dashboard"],
 
     "@bizware/error": ["@bizware/error@workspace:packages/error"],
 
