@@ -4,6 +4,10 @@ import globals from "globals";
 
 import { baseConfig } from "../utils/base.js";
 
+/**
+ * ESLint configuration for code that runs in the Bun runtime
+ * @type {import("eslint").Linter.Config[]}
+ */
 export const bunConfig = defineConfig([
   baseConfig,
   {

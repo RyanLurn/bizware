@@ -5,6 +5,10 @@ import js from "@eslint/js";
 
 import { ignoreConfig } from "./ignore.js";
 
+/**
+ * Base ESLint configuration for all projects
+ * @type {import("eslint").Linter.Config[]}
+ */
 export const baseConfig = defineConfig([
   ignoreConfig,
   js.configs.recommended,

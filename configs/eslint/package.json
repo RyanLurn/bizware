@@ -3,16 +3,15 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "bunx tsdown",
     "check-types": "bunx tsc --noEmit",
     "lint": "bunx eslint --cache",
     "lint:fix": "bunx eslint --cache --fix",
     "check": "bun run check-types && bun run lint"
   },
   "exports": {
-    "./bun": "./src/bun.js",
-    "./browser": "./src/browser.js",
-    "./isomorphic": "./src/isomorphic.js"
+    "./bun": "./src/configs/bun.js",
+    "./browser": "./src/configs/browser.js",
+    "./isomorphic": "./src/configs/isomorphic.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
