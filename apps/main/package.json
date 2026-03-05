@@ -1,5 +1,5 @@
 {
-  "name": "@bizware/dashboard",
+  "name": "@bizware/main",
   "type": "module",
   "private": true,
   "scripts": {
