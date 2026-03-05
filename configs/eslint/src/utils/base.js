@@ -3,7 +3,7 @@ import { defineConfig } from "eslint/config";
 import ts from "typescript-eslint";
 import js from "@eslint/js";
 
-import { ignoreConfig } from "@/utils/ignore";
+import { ignoreConfig } from "./ignore.js";
 
 export const baseConfig = defineConfig([
   ignoreConfig,
