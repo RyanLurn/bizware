@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "@bizware/eslint": "workspace:*",
-    "@bizware/types": "workspace:*",
     "@bizware/typescript": "workspace:*",
     "@tailwindcss/vite": "catalog:vite",
     "@types/bun": "catalog:types",
