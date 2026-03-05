@@ -13,8 +13,8 @@
   },
   "exports": {
     "./ports": {
-      "import": "./dist/ports.mjs",
-      "types": "./dist/ports.d.mts"
+      "import": "./src/constants/ports.js",
+      "types": "./src/constants/ports.d.ts"
     },
     "./types/brand": {
       "types": "./src/types/brand.ts"
