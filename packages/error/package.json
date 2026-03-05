@@ -5,7 +5,6 @@
   "scripts": {
     "build": "bunx tsdown",
     "build:watch": "bunx tsdown --watch",
-    "try": "bun run test/try.ts",
     "check-types": "bunx tsc --noEmit",
     "lint": "bunx eslint --cache",
     "lint:fix": "bunx eslint --cache --fix",
