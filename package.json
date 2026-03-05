@@ -27,7 +27,9 @@
     "format": "bunx prettier . --write",
     "format:check": "bunx prettier . --check",
     "check": "bun run check-types && bun run lint && bun run format:check",
-    "sync-hooks": "bunx lefthook install"
+    "sync-hooks": "bunx lefthook install",
+    "types:build": "bun --elide-lines 0 --filter @bizware/types build",
+    "error:build": "bun --elide-lines 0 --filter @bizware/error build"
   },
   "devDependencies": {
     "lefthook": "^2.0.16",

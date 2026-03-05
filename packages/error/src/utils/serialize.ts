@@ -54,3 +54,5 @@ export function serializeCustomError(error: CustomError) {
 
   return serializedError;
 }
+
+export { ErrorObject } from "serialize-error";
