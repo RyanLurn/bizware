@@ -52,7 +52,8 @@
     "types:build": "bun --elide-lines 0 --filter @bizware/types build",
     "error:build": "bun --elide-lines 0 --filter @bizware/error build",
     "ui:add": "bun --elide-lines 0 --filter @bizware/ui shadcn:add",
-    "ui:build": "bun --elide-lines 0 --filter @bizware/ui build"
+    "ui:build": "bun --elide-lines 0 --filter @bizware/ui build",
+    "grab": "bun run --elide-lines 0 --filter @bizware/grab start"
   },
   "devDependencies": {
     "lefthook": "^2.0.16",
