@@ -4,8 +4,16 @@
   "private": true,
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.mts"
+    },
+    "./utils": {
+      "import": "./dist/utils.mjs",
+      "types": "./dist/utils.d.mts"
+    },
+    "./theme": {
+      "import": "./dist/theme.mjs",
+      "types": "./dist/theme.d.mts"
     },
     "./style.css": "./src/globals.css"
   },
