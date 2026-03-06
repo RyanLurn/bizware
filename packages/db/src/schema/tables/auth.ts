@@ -2,7 +2,14 @@
 
 import type { Branded } from "@bizware/common/types/brand";
 
-import { boolean, pgTable, text } from "drizzle-orm/pg-core";
+import {
+  timestamp,
+  boolean,
+  pgTable,
+  index,
+  text,
+  uuid,
+} from "drizzle-orm/pg-core";
 
 import { timestamps } from "@/schema/helpers/timestamps";
 import { id } from "@/schema/helpers/id";
@@ -17,3 +24,25 @@ export const userTable = pgTable("users", {
   image: text("image"),
   ...timestamps,
 });
+
+export const userId = uuid("user_id")
+  .notNull()
+  .references(() => userTable.id, { onDelete: "cascade" });
+
+export const sessionTable = pgTable(
+  "sessions",
+  {
+    id,
+    userId,
+    token: text("token").notNull().unique(),
+    expiresAt: timestamp("expires_at", {
+      withTimezone: true,
+      mode: "date",
+      precision: 6,
+    }).notNull(),
+    ipAddress: text("ip_address"),
+    userAgent: text("user_agent"),
+    ...timestamps,
+  },
+  (table) => [index("sessions_user_id_idx").on(table.userId)]
+);
