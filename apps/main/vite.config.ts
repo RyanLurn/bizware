@@ -9,7 +9,11 @@ export default defineConfig({
   plugins: [
     // Make sure that '@tanstack/react-start/plugin/vite' is passed before '@vitejs/plugin-react'
     tanstackStart(),
-    react(),
+    react({
+      babel: {
+        plugins: ["babel-plugin-react-compiler"],
+      },
+    }),
     tailwindcss(),
   ],
   resolve: {
