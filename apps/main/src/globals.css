@@ -1,2 +1,4 @@
 @import "tailwindcss";
-@import "@protostar/ui/style.css";
+@import "@bizware/ui/style.css";
+
+@source "../node_modules/@bizware/ui/dist";
