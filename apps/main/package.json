@@ -23,14 +23,14 @@
   "devDependencies": {
     "@bizware/eslint": "workspace:*",
     "@bizware/typescript": "workspace:*",
-    "@tailwindcss/vite": "catalog:vite",
+    "@tailwindcss/vite": "catalog:build",
     "@types/bun": "catalog:types",
     "@types/react": "catalog:types",
     "@types/react-dom": "catalog:types",
-    "@vitejs/plugin-react": "catalog:vite",
+    "@vitejs/plugin-react": "catalog:build",
     "eslint": "catalog:",
     "tailwindcss": "catalog:ui",
     "typescript": "catalog:",
-    "vite": "catalog:vite"
+    "vite": "catalog:build"
   }
 }
