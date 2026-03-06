@@ -27,6 +27,7 @@ export const userTable = pgTable("users", {
 
 export const userId = uuid("user_id")
   .notNull()
+  .$type<UserId>()
   .references(() => userTable.id, { onDelete: "cascade" });
 
 export const sessionTable = pgTable(
