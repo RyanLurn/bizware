@@ -24,7 +24,7 @@ export const Route = createRootRoute({
         name: "viewport",
       },
       {
-        title: "Protostar Admin Panel",
+        title: "Bizware",
       },
     ],
     links: [
@@ -37,7 +37,7 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html suppressHydrationWarning lang="vi">
       <head>
         <HeadContent />
       </head>
