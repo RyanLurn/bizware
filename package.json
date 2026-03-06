@@ -6,7 +6,8 @@
     "packages": [
       "apps/*",
       "configs/*",
-      "packages/*"
+      "packages/*",
+      "scripts/*"
     ],
     "catalog": {
       "eslint": "^10.0.2",
