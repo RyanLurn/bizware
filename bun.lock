@@ -115,6 +115,19 @@
         "zod": "catalog:",
       },
     },
+    "scripts/grab": {
+      "name": "@bizware/grab",
+      "dependencies": {
+        "@bizware/common": "workspace:*",
+      },
+      "devDependencies": {
+        "@bizware/eslint": "workspace:*",
+        "@bizware/typescript": "workspace:*",
+        "@types/bun": "catalog:types",
+        "eslint": "catalog:",
+        "typescript": "catalog:",
+      },
+    },
   },
   "catalog": {
     "eslint": "^10.0.2",
@@ -220,6 +233,8 @@
     "@bizware/error": ["@bizware/error@workspace:packages/error"],
 
     "@bizware/eslint": ["@bizware/eslint@workspace:configs/eslint"],
+
+    "@bizware/grab": ["@bizware/grab@workspace:scripts/grab"],
 
     "@bizware/main": ["@bizware/main@workspace:apps/main"],
 

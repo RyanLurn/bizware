@@ -1,0 +1,21 @@
+{
+  "name": "@bizware/grab",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check-types": "bunx tsc --noEmit",
+    "lint": "bunx eslint --cache",
+    "lint:fix": "bunx eslint --cache --fix",
+    "check": "bun run check-types && bun run lint"
+  },
+  "dependencies": {
+    "@bizware/common": "workspace:*"
+  },
+  "devDependencies": {
+    "@bizware/eslint": "workspace:*",
+    "@bizware/typescript": "workspace:*",
+    "@types/bun": "catalog:types",
+    "eslint": "catalog:",
+    "typescript": "catalog:"
+  }
+}
