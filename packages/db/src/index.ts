@@ -2,7 +2,12 @@ import { drizzle } from "drizzle-orm/neon-http";
 import { createEnv } from "@t3-oss/env-core";
 import { z } from "zod";
 
-import * as authSchema from "@/schema/tables/auth";
+import {
+  verificationTable,
+  sessionTable,
+  accountTable,
+  userTable,
+} from "@/schema/tables/auth";
 
 const env = createEnv({
   server: {
@@ -12,5 +17,7 @@ const env = createEnv({
 });
 
 export const db = drizzle(env.NEON_POOLED_CONNECTION_STRING, {
-  schema: { ...authSchema },
+  schema: { verificationTable, sessionTable, accountTable, userTable },
 });
+
+export { verificationTable, sessionTable, accountTable, userTable };

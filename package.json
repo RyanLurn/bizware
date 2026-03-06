@@ -50,7 +50,7 @@
     "check": "bun run check-types && bun run lint && bun run format:check",
     "sync-hooks": "bunx lefthook install",
     "main:dev": "bun --elide-lines 0 --filter @bizware/main dev",
-    "types:build": "bun --elide-lines 0 --filter @bizware/types build",
+    "db:build": "bun --elide-lines 0 --filter @bizware/db build",
     "error:build": "bun --elide-lines 0 --filter @bizware/error build",
     "ui:add": "bun --elide-lines 0 --filter @bizware/ui shadcn:add",
     "ui:build": "bun --elide-lines 0 --filter @bizware/ui build",
