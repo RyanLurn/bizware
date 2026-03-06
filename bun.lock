@@ -71,6 +71,8 @@
     "packages/db": {
       "name": "@bizware/db",
       "dependencies": {
+        "@bizware/common": "workspace:*",
+        "@bizware/error": "workspace:*",
         "@neondatabase/serverless": "^1.0.2",
         "@t3-oss/env-core": "catalog:",
         "drizzle-orm": "^0.45.1",
