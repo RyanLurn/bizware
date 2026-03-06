@@ -120,8 +120,10 @@
   },
   "catalogs": {
     "build": {
+      "@rollup/plugin-babel": "^6.1.0",
       "@tailwindcss/vite": "^4.2.1",
       "@vitejs/plugin-react": "^5.1.4",
+      "babel-plugin-react-compiler": "^1.0.0",
       "tsdown": "^0.20.3",
       "vite": "^7.3.1",
     },
