@@ -44,9 +44,11 @@
   "devDependencies": {
     "@bizware/eslint": "workspace:*",
     "@bizware/typescript": "workspace:*",
+    "@rollup/plugin-babel": "catalog:build",
     "@types/bun": "catalog:types",
     "@types/react": "catalog:types",
     "@types/react-dom": "catalog:types",
+    "babel-plugin-react-compiler": "catalog:build",
     "eslint": "catalog:",
     "shadcn": "^3.8.5",
     "tailwindcss": "catalog:ui",
