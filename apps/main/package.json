@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@bizware/common": "workspace:*",
+    "@bizware/db": "workspace:*",
     "@bizware/error": "workspace:*",
     "@bizware/ui": "workspace:*",
     "@t3-oss/env-core": "catalog:",
