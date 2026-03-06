@@ -1,0 +1,34 @@
+{
+  "name": "@bizware/db",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "bunx tsdown",
+    "build:watch": "bunx tsdown --watch",
+    "check-types": "bunx tsc --noEmit",
+    "lint": "bunx eslint --cache",
+    "lint:fix": "bunx eslint --cache --fix",
+    "check": "bun run check-types && bun run lint"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.mts"
+    }
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "@t3-oss/env-core": "catalog:",
+    "drizzle-orm": "^0.45.1",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@bizware/eslint": "workspace:*",
+    "@bizware/typescript": "workspace:*",
+    "@types/bun": "catalog:types",
+    "drizzle-kit": "^0.31.9",
+    "eslint": "catalog:",
+    "tsdown": "catalog:build",
+    "typescript": "catalog:"
+  }
+}
