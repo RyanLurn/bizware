@@ -2,12 +2,12 @@ import type { ReactNode } from "react";
 
 import { useEffect, useState } from "react";
 
-import type { UserTheme } from "@/theme/schemas";
+import type { UserTheme } from "@/features/theme/schemas";
 
-import { handleThemeChange, getSystemTheme } from "@/theme/utils";
-import { getStoredTheme, setStoredTheme } from "@/theme/storage";
-import { UserThemeSchema } from "@/theme/schemas";
-import { ThemeContext } from "@/theme/context";
+import { handleThemeChange, getSystemTheme } from "@/features/theme/utils";
+import { getStoredTheme, setStoredTheme } from "@/features/theme/storage";
+import { UserThemeSchema } from "@/features/theme/schemas";
+import { ThemeContext } from "@/features/theme/context";
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [userTheme, setUserTheme] = useState<UserTheme>(getStoredTheme());

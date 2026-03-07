@@ -1,6 +1,6 @@
-import type { UserTheme } from "@/theme/schemas";
+import type { UserTheme } from "@/features/theme/schemas";
 
-import { UserThemeSchema } from "@/theme/schemas";
+import { UserThemeSchema } from "@/features/theme/schemas";
 
 export function handleThemeChange({ userTheme }: { userTheme: UserTheme }) {
   if (typeof window === "undefined") {

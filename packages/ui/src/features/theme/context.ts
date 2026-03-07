@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-import type { UserTheme, AppTheme } from "@/theme/schemas";
+import type { UserTheme, AppTheme } from "@/features/theme/schemas";
 
 type ThemeContextProps = {
   setTheme: (theme: UserTheme) => void;

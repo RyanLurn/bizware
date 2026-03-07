@@ -8,8 +8,8 @@ import {
   DropdownMenuItem,
   DropdownMenu,
 } from "@/components/ui/dropdown-menu";
+import { useTheme } from "@/features/theme/hook";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "@/theme/hook";
 
 export function ModeToggle({
   variant = "outline",
