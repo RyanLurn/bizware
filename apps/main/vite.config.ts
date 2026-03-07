@@ -8,7 +8,11 @@ import { resolve } from "node:path";
 export default defineConfig({
   plugins: [
     // Make sure that '@tanstack/react-start/plugin/vite' is passed before '@vitejs/plugin-react'
-    tanstackStart(),
+    tanstackStart({
+      router: {
+        quoteStyle: "double",
+      },
+    }),
     react({
       babel: {
         plugins: ["babel-plugin-react-compiler"],
