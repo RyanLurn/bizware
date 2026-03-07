@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "bunx --bun vite dev",
+    "try": "bun run test/try.ts",
     "check-types": "bunx tsc --noEmit",
     "lint": "bunx eslint --cache",
     "lint:fix": "bunx eslint --cache --fix",
