@@ -14,3 +14,9 @@ export const PasswordSchema = z
   .string()
   .min(MIN_PASSWORD_LENGTH)
   .max(MAX_PASSWORD_LENGTH);
+
+export const SignUpSchema = z.object({
+  password: PasswordSchema,
+  email: EmailSchema,
+  name: NameSchema,
+});
