@@ -1,6 +1,9 @@
 import { useAppForm } from "@bizware/ui/features/form/hook";
+import { toast } from "@bizware/ui/components/toaster";
 
+import { Route as DashboardRoute } from "@/routes/dashboard";
 import { SignUpSchema } from "@/features/auth/validators";
+import { authClient } from "@/features/auth/client";
 
 export function SignUpForm() {
   const signUpForm = useAppForm({
@@ -15,6 +18,18 @@ export function SignUpForm() {
           return parseResult.error.issues;
         }
       },
+    },
+    onSubmit: async ({ value }) => {
+      const { error } = await authClient.signUp.email({
+        ...value,
+        callbackURL: DashboardRoute.to,
+      });
+
+      if (error) {
+        toast.error("Đăng ký thất bại!");
+      } else {
+        toast.success("Đăng ký thành công!");
+      }
     },
     defaultValues: {
       password: "",
