@@ -9,7 +9,7 @@ import {
 } from "@/components";
 import { useFieldContext, useFormContext } from "@/features/form/context";
 
-interface TextFieldProps extends Omit<
+interface TextInputProps extends Omit<
   ComponentProps<typeof Input>,
   "aria-invalid" | "onChange" | "disabled" | "onBlur" | "value" | "name" | "id"
 > {
@@ -17,13 +17,13 @@ interface TextFieldProps extends Omit<
   label: string;
 }
 
-export function TextField({
+export function TextInput({
   placeholder,
   description,
   label,
   type,
   ...props
-}: TextFieldProps) {
+}: TextInputProps) {
   const field = useFieldContext<string>();
   const form = useFormContext();
 
