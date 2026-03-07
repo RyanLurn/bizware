@@ -8,8 +8,10 @@ import {
   ScriptOnce,
   Scripts,
 } from "@tanstack/react-router";
-import { ThemeProvider, themeScript, ModeToggle } from "@bizware/ui/theme";
-import { Toaster } from "@bizware/ui";
+import { ThemeProvider } from "@bizware/ui/features/theme/components/provider";
+import { ModeToggle } from "@bizware/ui/features/theme/components/mode-toggle";
+import { themeScript } from "@bizware/ui/features/theme/script";
+import { Toaster } from "@bizware/ui/components/toaster";
 
 import styles from "@/globals.css?url";
 

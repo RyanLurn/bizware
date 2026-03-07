@@ -1,7 +1,8 @@
 import type { ComponentProps } from "react";
 
 import { useFormContext } from "@/features/form/context";
-import { Spinner, Button } from "@/components";
+import { Spinner } from "@/components/spinner";
+import { Button } from "@/components/button";
 
 interface SubmitButtonProps extends Omit<
   ComponentProps<typeof Button>,

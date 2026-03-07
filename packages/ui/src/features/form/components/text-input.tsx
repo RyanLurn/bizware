@@ -5,9 +5,9 @@ import {
   FieldLabel,
   FieldError,
   Field,
-  Input,
-} from "@/components";
+} from "@/components/field";
 import { useFieldContext, useFormContext } from "@/features/form/context";
+import { Input } from "@/components/input";
 
 interface TextInputProps extends Omit<
   ComponentProps<typeof Input>,

@@ -7,9 +7,9 @@ import {
   DropdownMenuTrigger,
   DropdownMenuItem,
   DropdownMenu,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/dropdown-menu";
 import { useTheme } from "@/features/theme/hook";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/button";
 
 export function ModeToggle({
   variant = "outline",

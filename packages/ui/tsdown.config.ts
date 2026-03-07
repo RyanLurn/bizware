@@ -13,13 +13,9 @@ export default defineConfig({
       babelHelpers: "bundled",
     }),
   ],
-  entry: {
-    theme: "./src/features/theme/index.ts",
-    form: "./src/features/form/index.ts",
-    index: "./src/components/index.ts",
-    utils: "./src/lib/utils.ts",
-  },
+  entry: ["src/**/*.ts", "src/**/*.tsx"],
   dts: {
     sourcemap: true,
   },
+  unbundle: true,
 });
