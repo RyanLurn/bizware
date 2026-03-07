@@ -30,6 +30,7 @@
     "@base-ui/react": "^1.2.0",
     "@bizware/common": "workspace:*",
     "@bizware/error": "workspace:*",
+    "@tanstack/react-form": "^1.28.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "sonner": "^2.0.7",
