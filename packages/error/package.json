@@ -11,9 +11,9 @@
     "check": "bun run check-types && bun run lint"
   },
   "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.mts"
+    "./*": {
+      "import": "./dist/*.mjs",
+      "types": "./dist/*.d.mts"
     }
   },
   "dependencies": {
