@@ -15,6 +15,18 @@ export const baseConfig = defineConfig([
   ts.configs.recommendedTypeChecked,
   {
     rules: {
+      "@typescript-eslint/only-throw-error": [
+        "error",
+        {
+          allow: [
+            {
+              package: "@tanstack/router-core",
+              name: "Redirect",
+              from: "package",
+            },
+          ],
+        },
+      ],
       "@typescript-eslint/no-import-type-side-effects": "error",
       "@typescript-eslint/consistent-type-imports": "error",
     },
