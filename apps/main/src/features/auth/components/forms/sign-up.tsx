@@ -2,7 +2,7 @@ import { useAppForm } from "@bizware/ui/features/form/hook";
 
 import { SignUpSchema } from "@/features/auth/validators";
 
-export function SignUp() {
+export function SignUpForm() {
   const signUpForm = useAppForm({
     validators: {
       onSubmit: ({ value }) => {
