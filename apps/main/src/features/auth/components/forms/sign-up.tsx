@@ -32,6 +32,7 @@ export function SignUpForm() {
       }
     },
     defaultValues: {
+      confirmPassword: "",
       password: "",
       email: "",
       name: "",
