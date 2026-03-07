@@ -5,4 +5,5 @@ export default defineConfig({
     sourcemap: true,
   },
   entry: ["./src/index.ts"],
+  unbundle: true,
 });
