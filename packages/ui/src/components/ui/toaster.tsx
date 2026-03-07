@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { Toaster as Sonner, type ToasterProps, toast } from "sonner";
 
-import { useTheme } from "@/theme/hook";
+import { useTheme } from "@/features/theme/hook";
 
 function Toaster({ ...props }: ToasterProps) {
   const { appTheme } = useTheme();
