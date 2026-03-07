@@ -19,5 +19,3 @@ const env = createEnv({
 export const db = drizzle(env.NEON_POOLED_CONNECTION_STRING, {
   schema: { verificationTable, sessionTable, accountTable, userTable },
 });
-
-export { verificationTable, sessionTable, accountTable, userTable };
