@@ -15,6 +15,10 @@
       "import": "./dist/theme.mjs",
       "types": "./dist/theme.d.mts"
     },
+    "./form": {
+      "import": "./dist/form.mjs",
+      "types": "./dist/form.d.mts"
+    },
     "./style.css": "./src/globals.css"
   },
   "scripts": {
