@@ -5,9 +5,9 @@ import {
   accountTable,
   sessionTable,
   userTable,
-  db,
-} from "@bizware/db";
+} from "@bizware/db/schema/tables/auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { db } from "@bizware/db";
 
 export const dbOptions: BetterAuthOptions = {
   database: drizzleAdapter(db, {

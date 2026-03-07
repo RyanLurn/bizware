@@ -14,6 +14,10 @@
     "studio": "bunx drizzle-kit studio"
   },
   "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.mts"
+    },
     "./*": {
       "import": "./dist/*.mjs",
       "types": "./dist/*.d.mts"
