@@ -19,6 +19,7 @@
     "@tanstack/react-start": "catalog:tanstack",
     "better-auth": "^1.5.4",
     "lucide-react": "catalog:ui",
+    "nodemailer": "^8.0.1",
     "react": "catalog:ui",
     "react-dom": "catalog:ui",
     "zod": "catalog:"
@@ -28,6 +29,7 @@
     "@bizware/typescript": "workspace:*",
     "@tailwindcss/vite": "catalog:build",
     "@types/bun": "catalog:types",
+    "@types/nodemailer": "^7.0.11",
     "@types/react": "catalog:types",
     "@types/react-dom": "catalog:types",
     "@vitejs/plugin-react": "catalog:build",
