@@ -36,9 +36,9 @@ export function ForgotPasswordForm({
     },
     validators: {
       onSubmit: ({ value }) => {
-        const parseResult = EmailSchema.safeParse({
-          email: value.email.trim().toLowerCase(),
-        });
+        const parseResult = EmailSchema.safeParse(
+          value.email.trim().toLowerCase()
+        );
         if (!parseResult.success) {
           return parseResult.error.issues;
         }
