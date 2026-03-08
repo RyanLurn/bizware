@@ -75,6 +75,11 @@ export function SignUpForm() {
               label="Mật khẩu"
               type="password"
             />
+            <signUpForm.TextInput
+              label="Xác nhận mật khẩu"
+              placeholder="********"
+              type="password"
+            />
           </FieldGroup>
         </signUpForm.AppForm>
       </CardContent>
