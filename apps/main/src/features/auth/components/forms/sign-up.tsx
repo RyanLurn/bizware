@@ -122,7 +122,7 @@ export function SignUpForm({
               validators={{
                 onChange: ({ fieldApi, value }) => {
                   if (value !== fieldApi.form.getFieldValue("password")) {
-                    return "Mật khẩu không khớp";
+                    return { message: "Mật khẩu không khớp" };
                   }
                   return undefined;
                 },
