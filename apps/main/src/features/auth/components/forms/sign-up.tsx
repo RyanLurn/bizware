@@ -5,9 +5,14 @@ import {
   CardTitle,
   Card,
 } from "@bizware/ui/components/card";
+import {
+  FieldDescription,
+  FieldGroup,
+  Field,
+} from "@bizware/ui/components/field";
 import { useAppForm } from "@bizware/ui/features/form/hook";
-import { FieldGroup } from "@bizware/ui/components/field";
 import { toast } from "@bizware/ui/components/toaster";
+import { Link } from "@tanstack/react-router";
 
 import {
   PasswordSchema,
@@ -129,6 +134,18 @@ export function SignUpForm() {
               name="confirmPassword"
             />
           </FieldGroup>
+          <Field>
+            <signUpForm.SubmitButton
+              submittingText="Đang tạo..."
+              submitText="Tạo tài khoản"
+            />
+            <FieldDescription className="px-6 text-center">
+              Đã có tài khoản?{" "}
+              <Link from="/sign-up" to="/sign-in">
+                Đăng nhập
+              </Link>
+            </FieldDescription>
+          </Field>
         </signUpForm.AppForm>
       </CardContent>
     </Card>
