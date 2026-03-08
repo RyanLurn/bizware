@@ -1,3 +1,5 @@
+import type { ComponentProps } from "react";
+
 import {
   CardDescription,
   CardContent,
@@ -13,6 +15,7 @@ import {
 import { useAppForm } from "@bizware/ui/features/form/hook";
 import { toast } from "@bizware/ui/components/toaster";
 import { Link } from "@tanstack/react-router";
+import { cn } from "@bizware/ui/lib/utils";
 
 import {
   PasswordSchema,
@@ -23,7 +26,10 @@ import {
 import { Route as DashboardRoute } from "@/routes/dashboard";
 import { authClient } from "@/features/auth/client";
 
-export function SignUpForm() {
+export function SignUpForm({
+  className,
+  ...props
+}: ComponentProps<typeof Card>) {
   const signUpForm = useAppForm({
     validators: {
       onSubmit: ({ value }) => {
@@ -60,7 +66,7 @@ export function SignUpForm() {
   });
 
   return (
-    <Card>
+    <Card className={cn("w-full max-w-sm", className)} {...props}>
       <CardHeader>
         <CardTitle>Đăng ký tài khoản</CardTitle>
         <CardDescription>
