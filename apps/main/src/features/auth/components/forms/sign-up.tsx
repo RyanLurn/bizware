@@ -82,11 +82,16 @@ export function SignUpForm() {
               )}
               name="email"
             />
-            <signUpForm.TextInput
-              placeholder="********"
-              label="Mật khẩu"
-              type="password"
-              required
+            <signUpForm.AppField
+              children={() => (
+                <signUpForm.TextInput
+                  placeholder="********"
+                  label="Mật khẩu"
+                  type="password"
+                  required
+                />
+              )}
+              name="password"
             />
             <signUpForm.TextInput
               label="Xác nhận mật khẩu"
