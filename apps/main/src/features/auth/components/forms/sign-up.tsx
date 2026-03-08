@@ -1,10 +1,12 @@
 import {
   CardDescription,
+  CardContent,
   CardHeader,
   CardTitle,
   Card,
 } from "@bizware/ui/components/card";
 import { useAppForm } from "@bizware/ui/features/form/hook";
+import { FieldGroup } from "@bizware/ui/components/field";
 import { toast } from "@bizware/ui/components/toaster";
 
 import { Route as DashboardRoute } from "@/routes/dashboard";
@@ -43,7 +45,9 @@ export function SignUpForm() {
       email: "",
       name: "",
     },
+    formId: "sign-up-form",
   });
+
   return (
     <Card>
       <CardHeader>
@@ -52,6 +56,17 @@ export function SignUpForm() {
           Điền thông tin vào đơn bên dưới để tạo tài khoản mới
         </CardDescription>
       </CardHeader>
+      <CardContent>
+        <signUpForm.AppForm>
+          <FieldGroup>
+            <signUpForm.TextInput
+              placeholder="Nguyễn Văn A"
+              label="Họ và tên"
+              type="text"
+            />
+          </FieldGroup>
+        </signUpForm.AppForm>
+      </CardContent>
     </Card>
   );
 }
