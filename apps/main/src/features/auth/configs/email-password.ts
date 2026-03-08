@@ -30,6 +30,7 @@ export const emailPasswordOptions: BetterAuthOptions = {
   emailAndPassword: {
     maxPasswordLength: MAX_PASSWORD_LENGTH,
     minPasswordLength: MIN_PASSWORD_LENGTH,
+    requireEmailVerification: true,
     enabled: true,
   },
 };
