@@ -74,84 +74,92 @@ export function SignUpForm({
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <signUpForm.AppForm>
-          <FieldGroup>
-            <signUpForm.AppField
-              children={() => (
-                <signUpForm.TextInput
-                  placeholder="Nguyễn Văn A"
-                  label="Họ và tên"
-                  type="text"
-                  required
-                />
-              )}
-              validators={{
-                onChange: NameSchema,
-              }}
-              name="name"
-            />
-            <signUpForm.AppField
-              children={() => (
-                <signUpForm.TextInput
-                  placeholder="nguyenvana@gmail.com"
-                  label="Địa chỉ email"
-                  type="email"
-                  required
-                />
-              )}
-              validators={{
-                onChange: EmailSchema,
-              }}
-              name="email"
-            />
-            <signUpForm.AppField
-              children={() => (
-                <signUpForm.TextInput
-                  placeholder="********"
-                  label="Mật khẩu"
-                  type="password"
-                  required
-                />
-              )}
-              validators={{
-                onChange: PasswordSchema,
-              }}
-              name="password"
-            />
-            <signUpForm.AppField
-              validators={{
-                onChange: ({ fieldApi, value }) => {
-                  if (value !== fieldApi.form.getFieldValue("password")) {
-                    return { message: "Mật khẩu không khớp" };
-                  }
-                  return undefined;
-                },
-                onChangeListenTo: ["password"],
-              }}
-              children={() => (
-                <signUpForm.TextInput
-                  label="Xác nhận mật khẩu"
-                  placeholder="********"
-                  type="password"
-                  required
-                />
-              )}
-              name="confirmPassword"
-            />
-            <Field>
-              <signUpForm.SubmitButton
-                submittingText="Đang tạo..."
-                submitText="Tạo tài khoản"
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            void signUpForm.handleSubmit();
+          }}
+          id={signUpForm.formId}
+        >
+          <signUpForm.AppForm>
+            <FieldGroup>
+              <signUpForm.AppField
+                children={() => (
+                  <signUpForm.TextInput
+                    placeholder="Nguyễn Văn A"
+                    label="Họ và tên"
+                    type="text"
+                    required
+                  />
+                )}
+                validators={{
+                  onChange: NameSchema,
+                }}
+                name="name"
               />
-              <FieldDescription className="px-6 text-center">
-                Đã có tài khoản?{" "}
-                <Link from="/sign-up" to="/sign-in">
-                  Đăng nhập
-                </Link>
-              </FieldDescription>
-            </Field>
-          </FieldGroup>
-        </signUpForm.AppForm>
+              <signUpForm.AppField
+                children={() => (
+                  <signUpForm.TextInput
+                    placeholder="nguyenvana@gmail.com"
+                    label="Địa chỉ email"
+                    type="email"
+                    required
+                  />
+                )}
+                validators={{
+                  onChange: EmailSchema,
+                }}
+                name="email"
+              />
+              <signUpForm.AppField
+                children={() => (
+                  <signUpForm.TextInput
+                    placeholder="********"
+                    label="Mật khẩu"
+                    type="password"
+                    required
+                  />
+                )}
+                validators={{
+                  onChange: PasswordSchema,
+                }}
+                name="password"
+              />
+              <signUpForm.AppField
+                validators={{
+                  onChange: ({ fieldApi, value }) => {
+                    if (value !== fieldApi.form.getFieldValue("password")) {
+                      return { message: "Mật khẩu không khớp" };
+                    }
+                    return undefined;
+                  },
+                  onChangeListenTo: ["password"],
+                }}
+                children={() => (
+                  <signUpForm.TextInput
+                    label="Xác nhận mật khẩu"
+                    placeholder="********"
+                    type="password"
+                    required
+                  />
+                )}
+                name="confirmPassword"
+              />
+              <Field>
+                <signUpForm.SubmitButton
+                  submittingText="Đang tạo..."
+                  submitText="Tạo tài khoản"
+                />
+                <FieldDescription className="px-6 text-center">
+                  Đã có tài khoản?{" "}
+                  <Link from="/sign-up" to="/sign-in">
+                    Đăng nhập
+                  </Link>
+                </FieldDescription>
+              </Field>
+            </FieldGroup>
+          </signUpForm.AppForm>
+        </form>
       </CardContent>
     </Card>
   );
