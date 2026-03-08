@@ -39,7 +39,7 @@ export function SignInForm({
 
       if (error) {
         if (error.status === 403) {
-          toast.warning("Vui lòng xác thực email của bạn!");
+          toast.warning("Email chưa được xác thực!");
           await navigate({ to: "/verify-email" });
         } else {
           toast.error("Đăng nhập thất bại!");

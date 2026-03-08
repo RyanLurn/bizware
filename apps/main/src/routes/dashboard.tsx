@@ -13,5 +13,5 @@ export const Route = createFileRoute("/dashboard")({
 function Dashboard() {
   const { user } = Route.useRouteContext();
 
-  return <div>Welcome, {user.name}!</div>;
+  return <div>Chào mừng, {user.name}!</div>;
 }
