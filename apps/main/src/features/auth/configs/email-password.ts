@@ -26,6 +26,7 @@ export const emailPasswordOptions: BetterAuthOptions = {
         await sendEmail({ email: verificationEmail });
       }
     },
+    autoSignInAfterVerification: true,
   },
   emailAndPassword: {
     maxPasswordLength: MAX_PASSWORD_LENGTH,
