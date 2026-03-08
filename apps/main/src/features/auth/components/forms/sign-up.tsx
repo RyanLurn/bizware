@@ -70,12 +70,17 @@ export function SignUpForm() {
               )}
               name="name"
             />
-            <signUpForm.TextInput
-              description="Chúng tôi dùng email này xác nhận tài khoản và liên hệ với bạn. Vì vậy, hãy chọn email bạn thường dùng."
-              placeholder="nguyenvana@gmail.com"
-              label="Địa chỉ email"
-              type="email"
-              required
+            <signUpForm.AppField
+              children={() => (
+                <signUpForm.TextInput
+                  description="Chúng tôi dùng email này xác nhận tài khoản và liên hệ với bạn. Vì vậy, hãy chọn email bạn thường dùng."
+                  placeholder="nguyenvana@gmail.com"
+                  label="Địa chỉ email"
+                  type="email"
+                  required
+                />
+              )}
+              name="email"
             />
             <signUpForm.TextInput
               placeholder="********"
