@@ -63,22 +63,26 @@ export function SignUpForm() {
               placeholder="Nguyễn Văn A"
               label="Họ và tên"
               type="text"
+              required
             />
             <signUpForm.TextInput
               description="Chúng tôi dùng email này xác nhận tài khoản và liên hệ với bạn. Vì vậy, hãy chọn email bạn thường dùng."
               placeholder="nguyenvana@gmail.com"
               label="Địa chỉ email"
               type="email"
+              required
             />
             <signUpForm.TextInput
               placeholder="********"
               label="Mật khẩu"
               type="password"
+              required
             />
             <signUpForm.TextInput
               label="Xác nhận mật khẩu"
               placeholder="********"
               type="password"
+              required
             />
           </FieldGroup>
         </signUpForm.AppForm>
