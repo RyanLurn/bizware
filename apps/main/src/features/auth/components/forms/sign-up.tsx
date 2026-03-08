@@ -13,8 +13,8 @@ import {
   Field,
 } from "@bizware/ui/components/field";
 import { useAppForm } from "@bizware/ui/features/form/hook";
+import { useNavigate, Link } from "@tanstack/react-router";
 import { toast } from "@bizware/ui/components/toaster";
-import { Link } from "@tanstack/react-router";
 import { cn } from "@bizware/ui/lib/utils";
 
 import {
@@ -30,7 +30,22 @@ export function SignUpForm({
   className,
   ...props
 }: ComponentProps<typeof Card>) {
+  const navigate = useNavigate({ from: "/sign-up" });
   const signUpForm = useAppForm({
+    onSubmit: async ({ formApi, value }) => {
+      const { error } = await authClient.signUp.email({
+        ...value,
+        callbackURL: DashboardRoute.to,
+      });
+
+      if (error) {
+        toast.error("Đăng ký thất bại!");
+      } else {
+        toast.success("Đăng ký thành công!");
+        formApi.reset();
+        await navigate({ to: "/verify-email" });
+      }
+    },
     validators: {
       onSubmit: ({ value }) => {
         const parseResult = SignUpSchema.safeParse({
@@ -43,19 +58,6 @@ export function SignUpForm({
         }
         return undefined;
       },
-    },
-    onSubmit: async ({ formApi, value }) => {
-      const { error } = await authClient.signUp.email({
-        ...value,
-        callbackURL: DashboardRoute.to,
-      });
-
-      if (error) {
-        toast.error("Đăng ký thất bại!");
-      } else {
-        toast.success("Đăng ký thành công!");
-        formApi.reset();
-      }
     },
     defaultValues: {
       confirmPassword: "",
