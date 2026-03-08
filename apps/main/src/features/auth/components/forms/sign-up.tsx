@@ -1,3 +1,9 @@
+import {
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Card,
+} from "@bizware/ui/components/card";
 import { useAppForm } from "@bizware/ui/features/form/hook";
 import { toast } from "@bizware/ui/components/toaster";
 
@@ -38,5 +44,14 @@ export function SignUpForm() {
       name: "",
     },
   });
-  return <div>Sign Up</div>;
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Đăng ký tài khoản</CardTitle>
+        <CardDescription>
+          Điền thông tin vào đơn bên dưới để tạo tài khoản mới
+        </CardDescription>
+      </CardHeader>
+    </Card>
+  );
 }
