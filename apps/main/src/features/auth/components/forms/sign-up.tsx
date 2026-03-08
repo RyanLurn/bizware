@@ -64,6 +64,12 @@ export function SignUpForm() {
               label="Họ và tên"
               type="text"
             />
+            <signUpForm.TextInput
+              description="Chúng tôi dùng email này xác nhận tài khoản và liên hệ với bạn. Vì vậy, hãy chọn email bạn thường dùng."
+              placeholder="nguyenvana@gmail.com"
+              label="Địa chỉ email"
+              type="email"
+            />
           </FieldGroup>
         </signUpForm.AppForm>
       </CardContent>
