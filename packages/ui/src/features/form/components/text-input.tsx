@@ -1,4 +1,4 @@
-import type { ComponentProps } from "react";
+import type { ComponentProps, JSX } from "react";
 
 import {
   FieldDescription,
@@ -13,13 +13,15 @@ interface TextInputProps extends Omit<
   ComponentProps<typeof Input>,
   "aria-invalid" | "onChange" | "disabled" | "onBlur" | "value" | "name" | "id"
 > {
-  description?: string;
+  description?: JSX.Element | string;
+  rightLabel?: JSX.Element | string;
   label: string;
 }
 
 export function TextInput({
   placeholder,
   description,
+  rightLabel,
   label,
   type,
   ...props
@@ -34,7 +36,12 @@ export function TextInput({
     <form.Subscribe selector={(state) => state.isSubmitting}>
       {(isSubmitting) => (
         <Field data-invalid={isInvalid}>
-          <FieldLabel htmlFor={field.name}>{label}</FieldLabel>
+          <div className="flex items-center">
+            <FieldLabel htmlFor={field.name}>{label}</FieldLabel>
+            {rightLabel && (
+              <div className="ml-auto inline-block text-sm">{rightLabel}</div>
+            )}
+          </div>
           <Input
             onChange={(e) => field.handleChange(e.target.value)}
             placeholder={placeholder}

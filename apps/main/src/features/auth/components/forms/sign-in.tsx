@@ -103,6 +103,15 @@ export function SignInForm({
               <signInForm.AppField
                 children={() => (
                   <signInForm.TextInput
+                    rightLabel={
+                      <Link
+                        className="underline-offset-4 hover:underline"
+                        to="/forgot-password"
+                        from="/sign-in"
+                      >
+                        Quên mật khẩu?
+                      </Link>
+                    }
                     placeholder="********"
                     label="Mật khẩu"
                     type="password"
