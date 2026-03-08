@@ -93,7 +93,6 @@ export function SignUpForm({
             <signUpForm.AppField
               children={() => (
                 <signUpForm.TextInput
-                  description="Chúng tôi dùng email này xác nhận tài khoản và liên hệ với bạn. Vì vậy, hãy chọn email bạn thường dùng."
                   placeholder="nguyenvana@gmail.com"
                   label="Địa chỉ email"
                   type="email"
@@ -139,19 +138,19 @@ export function SignUpForm({
               )}
               name="confirmPassword"
             />
+            <Field>
+              <signUpForm.SubmitButton
+                submittingText="Đang tạo..."
+                submitText="Tạo tài khoản"
+              />
+              <FieldDescription className="px-6 text-center">
+                Đã có tài khoản?{" "}
+                <Link from="/sign-up" to="/sign-in">
+                  Đăng nhập
+                </Link>
+              </FieldDescription>
+            </Field>
           </FieldGroup>
-          <Field>
-            <signUpForm.SubmitButton
-              submittingText="Đang tạo..."
-              submitText="Tạo tài khoản"
-            />
-            <FieldDescription className="px-6 text-center">
-              Đã có tài khoản?{" "}
-              <Link from="/sign-up" to="/sign-in">
-                Đăng nhập
-              </Link>
-            </FieldDescription>
-          </Field>
         </signUpForm.AppForm>
       </CardContent>
     </Card>
