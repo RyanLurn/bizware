@@ -44,7 +44,7 @@ export function SignUpForm({
         return undefined;
       },
     },
-    onSubmit: async ({ value }) => {
+    onSubmit: async ({ formApi, value }) => {
       const { error } = await authClient.signUp.email({
         ...value,
         callbackURL: DashboardRoute.to,
@@ -54,6 +54,7 @@ export function SignUpForm({
         toast.error("Đăng ký thất bại!");
       } else {
         toast.success("Đăng ký thành công!");
+        formApi.reset();
       }
     },
     defaultValues: {
