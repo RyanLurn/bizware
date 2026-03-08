@@ -59,11 +59,16 @@ export function SignUpForm() {
       <CardContent>
         <signUpForm.AppForm>
           <FieldGroup>
-            <signUpForm.TextInput
-              placeholder="Nguyễn Văn A"
-              label="Họ và tên"
-              type="text"
-              required
+            <signUpForm.AppField
+              children={() => (
+                <signUpForm.TextInput
+                  placeholder="Nguyễn Văn A"
+                  label="Họ và tên"
+                  type="text"
+                  required
+                />
+              )}
+              name="name"
             />
             <signUpForm.TextInput
               description="Chúng tôi dùng email này xác nhận tài khoản và liên hệ với bạn. Vì vậy, hãy chọn email bạn thường dùng."
