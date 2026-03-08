@@ -10,7 +10,6 @@ import { sendEmail } from "@/features/emails/send";
 
 export const emailPasswordOptions: BetterAuthOptions = {
   emailVerification: {
-    // eslint-disable-next-line @typescript-eslint/require-await
     sendVerificationEmail: async ({ user, url }) => {
       const verificationEmail: Email = {
         html: `<p>Click vào đường link sau để xác thực địa chỉ email của bạn: <a href="${url}">${url}</a></p>`,
@@ -20,8 +19,12 @@ export const emailPasswordOptions: BetterAuthOptions = {
         to: user.email,
       };
 
-      // Avoid awaiting the email sending to prevent timing attacks.
-      void sendEmail({ email: verificationEmail });
+      if (process.env.NODE_ENV === "production") {
+        // Avoid awaiting the email sending in production to prevent timing attacks.
+        void sendEmail({ email: verificationEmail });
+      } else {
+        await sendEmail({ email: verificationEmail });
+      }
     },
   },
   emailAndPassword: {
