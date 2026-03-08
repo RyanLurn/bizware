@@ -9,8 +9,13 @@ import { useAppForm } from "@bizware/ui/features/form/hook";
 import { FieldGroup } from "@bizware/ui/components/field";
 import { toast } from "@bizware/ui/components/toaster";
 
+import {
+  PasswordSchema,
+  SignUpSchema,
+  EmailSchema,
+  NameSchema,
+} from "@/features/auth/validators";
 import { Route as DashboardRoute } from "@/routes/dashboard";
-import { SignUpSchema } from "@/features/auth/validators";
 import { authClient } from "@/features/auth/client";
 
 export function SignUpForm() {
@@ -25,6 +30,7 @@ export function SignUpForm() {
         if (!parseResult.success) {
           return parseResult.error.issues;
         }
+        return undefined;
       },
     },
     onSubmit: async ({ value }) => {
@@ -68,6 +74,9 @@ export function SignUpForm() {
                   required
                 />
               )}
+              validators={{
+                onChange: NameSchema,
+              }}
               name="name"
             />
             <signUpForm.AppField
@@ -80,6 +89,9 @@ export function SignUpForm() {
                   required
                 />
               )}
+              validators={{
+                onChange: EmailSchema,
+              }}
               name="email"
             />
             <signUpForm.AppField
@@ -91,9 +103,21 @@ export function SignUpForm() {
                   required
                 />
               )}
+              validators={{
+                onChange: PasswordSchema,
+              }}
               name="password"
             />
             <signUpForm.AppField
+              validators={{
+                onChange: ({ fieldApi, value }) => {
+                  if (value !== fieldApi.form.getFieldValue("password")) {
+                    return "Mật khẩu không khớp";
+                  }
+                  return undefined;
+                },
+                onChangeListenTo: ["password"],
+              }}
               children={() => (
                 <signUpForm.TextInput
                   label="Xác nhận mật khẩu"
