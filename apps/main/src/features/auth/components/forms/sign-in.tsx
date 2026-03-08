@@ -13,8 +13,8 @@ import {
   Field,
 } from "@bizware/ui/components/field";
 import { useAppForm } from "@bizware/ui/features/form/hook";
+import { useNavigate, Link } from "@tanstack/react-router";
 import { toast } from "@bizware/ui/components/toaster";
-import { Link } from "@tanstack/react-router";
 import { cn } from "@bizware/ui/lib/utils";
 
 import {
@@ -29,6 +29,7 @@ export function SignInForm({
   className,
   ...props
 }: ComponentProps<typeof Card>) {
+  const navigate = useNavigate({ from: "/sign-in" });
   const signInForm = useAppForm({
     onSubmit: async ({ formApi, value }) => {
       const { error } = await authClient.signIn.email({
@@ -37,7 +38,11 @@ export function SignInForm({
       });
 
       if (error) {
-        toast.error("Đăng nhập thất bại!");
+        if (error.status === 403) {
+          await navigate({ to: "/verify-email" });
+        } else {
+          toast.error("Đăng nhập thất bại!");
+        }
       } else {
         toast.success("Đăng nhập thành công!");
         formApi.reset();
