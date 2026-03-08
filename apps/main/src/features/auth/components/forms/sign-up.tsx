@@ -70,6 +70,11 @@ export function SignUpForm() {
               label="Địa chỉ email"
               type="email"
             />
+            <signUpForm.TextInput
+              placeholder="********"
+              label="Mật khẩu"
+              type="password"
+            />
           </FieldGroup>
         </signUpForm.AppForm>
       </CardContent>
