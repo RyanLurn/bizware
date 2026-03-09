@@ -8,7 +8,6 @@ import {
   MAX_NAME_LENGTH,
 } from "@/features/auth/constants";
 
-// For context, the longest name in Vietnam is only 43 characters long
 export const NameSchema = z
   .string()
   .trim()
