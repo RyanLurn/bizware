@@ -22,7 +22,7 @@ import {
   EmailSchema,
   NameSchema,
 } from "@/features/auth/validators";
-import { Route as DashboardRoute } from "@/routes/dashboard";
+import { Route as WelcomeRoute } from "@/routes/welcome";
 import { authClient } from "@/features/auth/client";
 
 export function SignUpForm({
@@ -34,7 +34,7 @@ export function SignUpForm({
     onSubmit: async ({ formApi, value }) => {
       const { error } = await authClient.signUp.email({
         ...value,
-        callbackURL: DashboardRoute.to,
+        callbackURL: WelcomeRoute.to,
       });
 
       if (error) {
