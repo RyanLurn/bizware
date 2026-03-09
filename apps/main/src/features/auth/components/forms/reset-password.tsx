@@ -10,6 +10,7 @@ import {
 import { FieldGroup, Field } from "@bizware/ui/components/field";
 import { useAppForm } from "@bizware/ui/features/form/hook";
 import { toast } from "@bizware/ui/components/toaster";
+import { useNavigate } from "@tanstack/react-router";
 import { cn } from "@bizware/ui/lib/utils";
 
 import { PasswordSchema } from "@/features/auth/validators";
@@ -24,6 +25,7 @@ export function ResetPasswordForm({
   token,
   ...props
 }: ResetPasswordFormProps) {
+  const navigate = useNavigate({ from: "/reset-password" });
   const resetPasswordForm = useAppForm({
     onSubmit: async ({ formApi, value }) => {
       const { error } = await authClient.resetPassword({
@@ -34,8 +36,11 @@ export function ResetPasswordForm({
       if (error) {
         toast.error("Đã xảy ra lỗi. Không thể xử lý yêu cầu của bạn.");
       } else {
-        toast.info("Yêu cầu đặt lại mật khẩu của bạn đã được gửi.");
+        toast.success(
+          "Đặt lại mật khẩu thành công! Bạn có thể đăng nhập bằng mật khẩu mới."
+        );
         formApi.reset();
+        await navigate({ to: "/sign-in" });
       }
     },
     validators: {
