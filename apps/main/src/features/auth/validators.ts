@@ -47,3 +47,8 @@ export const SignInSchema = z.object({
   password: PasswordSchema,
   email: EmailSchema,
 });
+
+export const VerificationRouteSearchParamsSchema = z.union([
+  z.object({ token: z.string().min(1) }),
+  z.object({ error: z.string().min(1) }),
+]);
