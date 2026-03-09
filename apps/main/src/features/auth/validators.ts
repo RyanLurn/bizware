@@ -10,10 +10,15 @@ import {
 // For context, the longest name in Vietnam is only 43 characters long
 export const NameSchema = z
   .string()
-  .min(1, "Họ và tên không được để trống.")
-  .max(
-    MAX_NAME_LENGTH,
-    `Họ và tên không được vượt quá ${MAX_NAME_LENGTH} ký tự.`
+  .trim()
+  .pipe(
+    z
+      .string()
+      .min(1, "Họ và tên không được để trống.")
+      .max(
+        MAX_NAME_LENGTH,
+        `Họ và tên không được vượt quá ${MAX_NAME_LENGTH} ký tự.`
+      )
   );
 
 export const EmailSchema = z
