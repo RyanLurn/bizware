@@ -1,7 +1,7 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
+import { z } from "zod";
 
 import { ResetPasswordForm } from "@/features/auth/components/forms/reset-password";
-import { VerificationRouteSearchParamsSchema } from "@/features/auth/validators";
 
 export const Route = createFileRoute("/(auth)/reset-password")({
   beforeLoad: ({ search }) => {
@@ -11,7 +11,10 @@ export const Route = createFileRoute("/(auth)/reset-password")({
 
     return { token: search.token };
   },
-  validateSearch: VerificationRouteSearchParamsSchema,
+  validateSearch: z.union([
+    z.object({ token: z.string().min(1) }),
+    z.object({ error: z.string().min(1) }),
+  ]),
   component: ResetPassword,
 });
 
