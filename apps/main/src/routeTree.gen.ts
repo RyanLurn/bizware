@@ -16,6 +16,7 @@ import { Route as authVerifyEmailRouteImport } from "./routes/(auth)/verify-emai
 import { Route as authSignUpRouteImport } from "./routes/(auth)/sign-up"
 import { Route as authSignInRouteImport } from "./routes/(auth)/sign-in"
 import { Route as authResetPasswordRouteImport } from "./routes/(auth)/reset-password"
+import { Route as authInvalidTokenRouteImport } from "./routes/(auth)/invalid-token"
 import { Route as authForgotPasswordRouteImport } from "./routes/(auth)/forgot-password"
 import { Route as ApiAuthSplatRouteImport } from "./routes/api/auth/$"
 
@@ -54,6 +55,11 @@ const authResetPasswordRoute = authResetPasswordRouteImport.update({
   path: "/reset-password",
   getParentRoute: () => rootRouteImport,
 } as any)
+const authInvalidTokenRoute = authInvalidTokenRouteImport.update({
+  id: "/(auth)/invalid-token",
+  path: "/invalid-token",
+  getParentRoute: () => rootRouteImport,
+} as any)
 const authForgotPasswordRoute = authForgotPasswordRouteImport.update({
   id: "/(auth)/forgot-password",
   path: "/forgot-password",
@@ -70,6 +76,7 @@ export interface FileRoutesByFullPath {
   "/dashboard": typeof DashboardRoute
   "/welcome": typeof WelcomeRoute
   "/forgot-password": typeof authForgotPasswordRoute
+  "/invalid-token": typeof authInvalidTokenRoute
   "/reset-password": typeof authResetPasswordRoute
   "/sign-in": typeof authSignInRoute
   "/sign-up": typeof authSignUpRoute
@@ -81,6 +88,7 @@ export interface FileRoutesByTo {
   "/dashboard": typeof DashboardRoute
   "/welcome": typeof WelcomeRoute
   "/forgot-password": typeof authForgotPasswordRoute
+  "/invalid-token": typeof authInvalidTokenRoute
   "/reset-password": typeof authResetPasswordRoute
   "/sign-in": typeof authSignInRoute
   "/sign-up": typeof authSignUpRoute
@@ -93,6 +101,7 @@ export interface FileRoutesById {
   "/dashboard": typeof DashboardRoute
   "/welcome": typeof WelcomeRoute
   "/(auth)/forgot-password": typeof authForgotPasswordRoute
+  "/(auth)/invalid-token": typeof authInvalidTokenRoute
   "/(auth)/reset-password": typeof authResetPasswordRoute
   "/(auth)/sign-in": typeof authSignInRoute
   "/(auth)/sign-up": typeof authSignUpRoute
@@ -106,6 +115,7 @@ export interface FileRouteTypes {
     | "/dashboard"
     | "/welcome"
     | "/forgot-password"
+    | "/invalid-token"
     | "/reset-password"
     | "/sign-in"
     | "/sign-up"
@@ -117,6 +127,7 @@ export interface FileRouteTypes {
     | "/dashboard"
     | "/welcome"
     | "/forgot-password"
+    | "/invalid-token"
     | "/reset-password"
     | "/sign-in"
     | "/sign-up"
@@ -128,6 +139,7 @@ export interface FileRouteTypes {
     | "/dashboard"
     | "/welcome"
     | "/(auth)/forgot-password"
+    | "/(auth)/invalid-token"
     | "/(auth)/reset-password"
     | "/(auth)/sign-in"
     | "/(auth)/sign-up"
@@ -140,6 +152,7 @@ export interface RootRouteChildren {
   DashboardRoute: typeof DashboardRoute
   WelcomeRoute: typeof WelcomeRoute
   authForgotPasswordRoute: typeof authForgotPasswordRoute
+  authInvalidTokenRoute: typeof authInvalidTokenRoute
   authResetPasswordRoute: typeof authResetPasswordRoute
   authSignInRoute: typeof authSignInRoute
   authSignUpRoute: typeof authSignUpRoute
@@ -198,6 +211,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof authResetPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
+    "/(auth)/invalid-token": {
+      id: "/(auth)/invalid-token"
+      path: "/invalid-token"
+      fullPath: "/invalid-token"
+      preLoaderRoute: typeof authInvalidTokenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     "/(auth)/forgot-password": {
       id: "/(auth)/forgot-password"
       path: "/forgot-password"
@@ -220,6 +240,7 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRoute,
   WelcomeRoute: WelcomeRoute,
   authForgotPasswordRoute: authForgotPasswordRoute,
+  authInvalidTokenRoute: authInvalidTokenRoute,
   authResetPasswordRoute: authResetPasswordRoute,
   authSignInRoute: authSignInRoute,
   authSignUpRoute: authSignUpRoute,
