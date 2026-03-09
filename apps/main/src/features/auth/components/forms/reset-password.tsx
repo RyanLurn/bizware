@@ -43,15 +43,6 @@ export function ResetPasswordForm({
         await navigate({ to: "/sign-in" });
       }
     },
-    validators: {
-      onSubmit: ({ value }) => {
-        const parseResult = PasswordSchema.safeParse(value.newPassword);
-        if (!parseResult.success) {
-          return parseResult.error.issues;
-        }
-        return undefined;
-      },
-    },
     defaultValues: {
       newPassword: "",
     },
