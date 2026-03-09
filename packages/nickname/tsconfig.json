@@ -4,5 +4,5 @@
   "compilerOptions": {
     "checkJs": true
   },
-  "include": ["src/**/*", "eslint.config.js"]
+  "include": ["src/**/*", "test/**/*", "eslint.config.js"]
 }
