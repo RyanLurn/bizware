@@ -9,6 +9,12 @@
     "lint:fix": "bunx eslint --cache --fix",
     "check": "bun run check-types && bun run lint"
   },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    }
+  },
   "devDependencies": {
     "@bizware/eslint": "workspace:*",
     "@bizware/typescript": "workspace:*",
