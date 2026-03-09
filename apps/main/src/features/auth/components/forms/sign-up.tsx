@@ -19,7 +19,6 @@ import { cn } from "@bizware/ui/lib/utils";
 
 import {
   PasswordSchema,
-  SignUpSchema,
   EmailSchema,
   NameSchema,
 } from "@/features/auth/validators";
@@ -45,19 +44,6 @@ export function SignUpForm({
         formApi.reset();
         await navigate({ to: "/verify-email" });
       }
-    },
-    validators: {
-      onSubmit: ({ value }) => {
-        const parseResult = SignUpSchema.safeParse({
-          email: value.email.trim().toLowerCase(),
-          password: value.password,
-          name: value.name.trim(),
-        });
-        if (!parseResult.success) {
-          return parseResult.error.issues;
-        }
-        return undefined;
-      },
     },
     defaultValues: {
       confirmPassword: "",
