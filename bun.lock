@@ -107,6 +107,17 @@
         "typescript": "catalog:",
       },
     },
+    "packages/nickname": {
+      "name": "@bizware/nickname",
+      "devDependencies": {
+        "@bizware/eslint": "workspace:*",
+        "@bizware/typescript": "workspace:*",
+        "@types/bun": "catalog:types",
+        "eslint": "catalog:",
+        "tsdown": "catalog:build",
+        "typescript": "catalog:",
+      },
+    },
     "packages/ui": {
       "name": "@bizware/ui",
       "dependencies": {
@@ -284,6 +295,8 @@
     "@bizware/grab": ["@bizware/grab@workspace:scripts/grab"],
 
     "@bizware/main": ["@bizware/main@workspace:apps/main"],
+
+    "@bizware/nickname": ["@bizware/nickname@workspace:packages/nickname"],
 
     "@bizware/typescript": ["@bizware/typescript@workspace:configs/typescript"],
 
