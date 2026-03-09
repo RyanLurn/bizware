@@ -34,17 +34,6 @@ export function ForgotPasswordForm({
         formApi.reset();
       }
     },
-    validators: {
-      onSubmit: ({ value }) => {
-        const parseResult = EmailSchema.safeParse(
-          value.email.trim().toLowerCase()
-        );
-        if (!parseResult.success) {
-          return parseResult.error.issues;
-        }
-        return undefined;
-      },
-    },
     defaultValues: {
       email: "",
     },
