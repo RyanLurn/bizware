@@ -2,9 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@bizware/typescript/base.json",
   "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "checkJs": true
   },
-  "include": ["src/**/*", "eslint.config.js", "tsdown.config.ts"]
+  "include": ["src/**/*", "eslint.config.js"]
 }
