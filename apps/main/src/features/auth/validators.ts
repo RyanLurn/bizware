@@ -18,13 +18,15 @@ export const NameSchema = z
   );
 
 export const EmailSchema = z
-  .email({
-    pattern: z.regexes.unicodeEmail,
-    error: "Email không hợp lệ.",
-  })
-  .max(
-    MAX_EMAIL_LENGTH,
-    `Email không được vượt quá ${MAX_EMAIL_LENGTH} ký tự.`
+  .string()
+  .trim()
+  .toLowerCase()
+  .max(MAX_EMAIL_LENGTH, `Email không được vượt quá ${MAX_EMAIL_LENGTH} ký tự.`)
+  .pipe(
+    z.email({
+      pattern: z.regexes.unicodeEmail,
+      error: "Email không hợp lệ.",
+    })
   );
 
 export const PasswordSchema = z
