@@ -4,6 +4,7 @@ import {
   MIN_PASSWORD_LENGTH,
   MAX_PASSWORD_LENGTH,
   MAX_EMAIL_LENGTH,
+  MIN_EMAIL_LENGTH,
   MAX_NAME_LENGTH,
 } from "@/features/auth/constants";
 
@@ -21,6 +22,7 @@ export const EmailSchema = z
   .string()
   .trim()
   .toLowerCase()
+  .min(MIN_EMAIL_LENGTH, `Email phải có ít nhất ${MIN_EMAIL_LENGTH} ký tự.`)
   .max(MAX_EMAIL_LENGTH, `Email không được vượt quá ${MAX_EMAIL_LENGTH} ký tự.`)
   .pipe(
     z.email({
