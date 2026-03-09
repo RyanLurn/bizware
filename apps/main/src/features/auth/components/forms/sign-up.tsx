@@ -40,7 +40,7 @@ export function SignUpForm({
       if (error) {
         toast.error("Đăng ký thất bại!");
       } else {
-        toast.success("Đăng ký thành công!");
+        toast.info("Đăng ký thành công! Vui lòng kiểm tra email để xác nhận.");
         formApi.reset();
         await navigate({ to: "/verify-email" });
       }
