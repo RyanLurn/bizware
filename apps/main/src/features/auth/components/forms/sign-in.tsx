@@ -17,11 +17,7 @@ import { useNavigate, Link } from "@tanstack/react-router";
 import { toast } from "@bizware/ui/components/toaster";
 import { cn } from "@bizware/ui/lib/utils";
 
-import {
-  PasswordSchema,
-  SignInSchema,
-  EmailSchema,
-} from "@/features/auth/validators";
+import { PasswordSchema, EmailSchema } from "@/features/auth/validators";
 import { Route as DashboardRoute } from "@/routes/dashboard";
 import { authClient } from "@/features/auth/client";
 
@@ -48,18 +44,6 @@ export function SignInForm({
         toast.success("Đăng nhập thành công!");
         formApi.reset();
       }
-    },
-    validators: {
-      onSubmit: ({ value }) => {
-        const parseResult = SignInSchema.safeParse({
-          email: value.email.trim().toLowerCase(),
-          password: value.password,
-        });
-        if (!parseResult.success) {
-          return parseResult.error.issues;
-        }
-        return undefined;
-      },
     },
     defaultValues: {
       password: "",
