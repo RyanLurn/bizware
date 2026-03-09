@@ -5,7 +5,7 @@ import { getUser } from "@/lib/server-functions/get-user";
 
 export const Route = createFileRoute("/welcome")({
   beforeLoad: async ({ search }) => {
-    if (Object.hasOwn(search, "error")) {
+    if ("error" in search) {
       throw redirect({ to: "/invalid-token" });
     }
 
