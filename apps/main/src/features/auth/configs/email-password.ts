@@ -28,6 +28,7 @@ export const emailPasswordOptions: BetterAuthOptions = {
     },
     maxPasswordLength: MAX_PASSWORD_LENGTH,
     minPasswordLength: MIN_PASSWORD_LENGTH,
+    revokeSessionsOnPasswordReset: true,
     requireEmailVerification: true,
     enabled: true,
   },
