@@ -10,6 +10,22 @@ import { sendEmail } from "@/features/emails/send";
 
 export const emailPasswordOptions: BetterAuthOptions = {
   emailAndPassword: {
+    onExistingUserSignUp: async ({ user }) => {
+      const warningEmail: Email = {
+        html: `<p>Ai đó đang cố đăng ký với email của bạn: ${user.email}. Nếu đây là bạn, hãy đăng nhập thay vì đăng ký. Nếu không, bạn có thể bỏ qua email này.</p>`,
+        text: `Ai đó đang cố đăng ký với email của bạn: ${user.email}. Nếu đây là bạn, hãy đăng nhập thay vì đăng ký. Nếu không, bạn có thể bỏ qua email này.`,
+        subject: "Có ai đó đang cố đăng ký với email của bạn",
+        from: "noreply@bizware.com",
+        to: "admin@bizware.com",
+      };
+
+      if (process.env.NODE_ENV === "production") {
+        // Avoid awaiting the email sending in production to prevent timing attacks.
+        void sendEmail({ email: warningEmail });
+      } else {
+        await sendEmail({ email: warningEmail });
+      }
+    },
     sendResetPassword: async ({ user, url }) => {
       const resetPasswordEmail: Email = {
         html: `<p>Click vào đường link sau để đặt lại mật khẩu: <a href="${url}">${url}</a></p>`,
