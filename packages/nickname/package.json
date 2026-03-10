@@ -5,6 +5,7 @@
   "scripts": {
     "try": "bun test/try.ts",
     "bench:collision": "bun benchmark/collision.ts",
+    "bench:memory": "bun benchmark/memory.ts",
     "check-types": "bunx tsc --noEmit",
     "lint": "bunx eslint --cache",
     "lint:fix": "bunx eslint --cache --fix",
