@@ -14,3 +14,11 @@ export function getRandomItem(array) {
 
   return item;
 }
+
+/**
+ * @param {string} word
+ * @returns {string}
+ */
+export function capitalizeFirstLetter(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
