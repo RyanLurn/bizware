@@ -1,4 +1,4 @@
-import { generateNickname } from "../src";
+import { generateNickname } from "@/index";
 
 const startTime = Bun.nanoseconds();
 

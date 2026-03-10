@@ -1,8 +1,7 @@
-import { firstNames } from "../src/datasets/first-names";
-import { adjectives } from "../src/datasets/adjectives";
-import { lastNames } from "../src/datasets/last-names";
-import { adverbs } from "../src/datasets/adverbs";
-import { nouns } from "../src/datasets/nouns";
+import { firstNames } from "@/datasets/first-names";
+import { adjectives } from "@/datasets/adjectives";
+import { lastNames } from "@/datasets/last-names";
+import { nouns } from "@/datasets/nouns";
 
 /**
  * Calculates the probability of at least one collision
@@ -21,7 +20,6 @@ export function collisionProbability(
 
 const numberOfFirstNames = firstNames.length;
 const numberOfLastNames = lastNames.length;
-const numberOfAdverbs = adverbs.length;
 const numberOfAdjectives = adjectives.length;
 const numberOfNouns = nouns.length;
 const numberOfDraws = 10_000_000;
@@ -29,13 +27,7 @@ const numberOfRerolls = 1;
 
 const percentage =
   collisionProbability(
-    [
-      numberOfFirstNames,
-      numberOfLastNames,
-      numberOfAdverbs,
-      numberOfAdjectives,
-      numberOfNouns,
-    ],
+    [numberOfFirstNames, numberOfLastNames, numberOfAdjectives, numberOfNouns],
     numberOfDraws,
     numberOfRerolls
   ) * 100;
@@ -43,7 +35,6 @@ const percentage =
 console.log("With:");
 console.log(`${numberOfFirstNames.toLocaleString()} first names`);
 console.log(`${numberOfLastNames.toLocaleString()} last names`);
-console.log(`${numberOfAdverbs.toLocaleString()} adverbs`);
 console.log(`${numberOfAdjectives.toLocaleString()} adjectives`);
 console.log(`${numberOfNouns.toLocaleString()} nouns`);
 console.log("And:");

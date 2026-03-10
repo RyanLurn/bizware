@@ -1,6 +1,6 @@
 import { heapStats } from "bun:jsc";
 
-import { generateNickname } from "../src";
+import { generateNickname } from "@/index";
 
 const startHeapSize = heapStats().heapSize;
 
