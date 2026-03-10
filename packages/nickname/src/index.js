@@ -10,5 +10,5 @@ export function generateNickname() {
   const randomAdjective = getRandomItem(adjectives);
   const randomNoun = getRandomItem(nouns);
 
-  return `${randomFirstName} ${randomLastName} the ${randomAdjective.charAt(0).toUpperCase() + randomAdjective.slice(1)} ${randomNoun}`;
+  return `${randomFirstName} ${randomLastName} the ${randomAdjective.charAt(0).toUpperCase() + randomAdjective.slice(1)} ${randomNoun.charAt(0).toUpperCase() + randomNoun.slice(1)}`;
 }
