@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "try": "bun test/try.ts",
-    "bench:collision": "bun benchmark/collision.ts",
-    "bench:memory": "bun benchmark/memory.ts",
+    "bench:col": "bun benchmark/collision.ts",
+    "bench:mem": "bun benchmark/memory.ts",
+    "bench:perf": "bun benchmark/performance.ts",
     "check-types": "bunx tsc --noEmit",
     "lint": "bunx eslint --cache",
     "lint:fix": "bunx eslint --cache --fix",
