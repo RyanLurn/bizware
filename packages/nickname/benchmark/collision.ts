@@ -1,13 +1,11 @@
 import { generateNickname } from "../src";
 
 const runs = 100;
-const times = 10_000_000;
+const times = 1_000_000;
 
-const nicknames = new Set<string>();
 const collisions = {
   under100k: 0,
   under10k: 0,
-  under10m: 0,
   under1k: 0,
   under1m: 0,
   total: 0,
@@ -15,6 +13,12 @@ const collisions = {
 
 const startTime = Bun.nanoseconds();
 for (let runIndex = 0; runIndex < runs; runIndex++) {
+  if (runIndex % (runs / 10) === 0) {
+    console.log(`Run ${runIndex}/${runs}`);
+  }
+
+  const nicknames = new Set<string>();
+
   for (let timeIndex = 0; timeIndex < times; timeIndex++) {
     const nickname = generateNickname();
 
@@ -35,10 +39,6 @@ for (let runIndex = 0; runIndex < runs; runIndex++) {
 
       if (timeIndex < 1_000_000) {
         collisions.under1m++;
-      }
-
-      if (timeIndex < 10_000_000) {
-        collisions.under10m++;
       }
 
       break;
