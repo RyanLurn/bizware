@@ -1,4 +1,4 @@
-const femaleFirstNames = [
+export const femaleFirstNames = [
   "Olivia",
   "Emma",
   "Amelia",
@@ -1001,7 +1001,7 @@ const femaleFirstNames = [
   "Raina",
 ];
 
-const maleFirstNames = [
+export const maleFirstNames = [
   "Liam",
   "Noah",
   "Oliver",

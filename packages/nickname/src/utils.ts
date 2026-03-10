@@ -1,9 +1,4 @@
-/**
- * @template T
- * @param {T[]} array
- * @returns {T}
- */
-export function getRandomItem(array) {
+export function getRandomItem<T>(array: T[]) {
   const index = Math.floor(Math.random() * array.length);
   const item = array[index];
 
@@ -15,10 +10,6 @@ export function getRandomItem(array) {
   return item;
 }
 
-/**
- * @param {string} word
- * @returns {string}
- */
-export function capitalizeFirstLetter(word) {
+export function capitalizeFirstLetter(word: string) {
   return word.charAt(0).toUpperCase() + word.slice(1);
 }
