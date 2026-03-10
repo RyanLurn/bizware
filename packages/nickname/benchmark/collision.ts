@@ -1,6 +1,6 @@
 import { generateNickname } from "../src";
 
-const runs = 1_000;
+const runs = 100;
 const times = 10_000_000;
 
 const nicknames = new Set<string>();
