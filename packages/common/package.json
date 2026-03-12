@@ -19,6 +19,10 @@
     },
     "./types/result": {
       "types": "./src/types/result.ts"
+    },
+    "./utils/*": {
+      "import": "./src/utils/*.js",
+      "types": "./src/utils/*.d.ts"
     }
   },
   "devDependencies": {
