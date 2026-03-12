@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from "./routes/__root"
 import { Route as WelcomeRouteImport } from "./routes/welcome"
 import { Route as DashboardRouteImport } from "./routes/dashboard"
 import { Route as IndexRouteImport } from "./routes/index"
+import { Route as AppWebsitesRouteImport } from "./routes/_app/websites"
 import { Route as authVerifyEmailRouteImport } from "./routes/(auth)/verify-email"
 import { Route as authSignUpRouteImport } from "./routes/(auth)/sign-up"
 import { Route as authSignInRouteImport } from "./routes/(auth)/sign-in"
@@ -33,6 +34,11 @@ const DashboardRoute = DashboardRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: "/",
   path: "/",
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppWebsitesRoute = AppWebsitesRouteImport.update({
+  id: "/_app/websites",
+  path: "/websites",
   getParentRoute: () => rootRouteImport,
 } as any)
 const authVerifyEmailRoute = authVerifyEmailRouteImport.update({
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   "/sign-in": typeof authSignInRoute
   "/sign-up": typeof authSignUpRoute
   "/verify-email": typeof authVerifyEmailRoute
+  "/websites": typeof AppWebsitesRoute
   "/api/auth/$": typeof ApiAuthSplatRoute
 }
 export interface FileRoutesByTo {
@@ -93,6 +100,7 @@ export interface FileRoutesByTo {
   "/sign-in": typeof authSignInRoute
   "/sign-up": typeof authSignUpRoute
   "/verify-email": typeof authVerifyEmailRoute
+  "/websites": typeof AppWebsitesRoute
   "/api/auth/$": typeof ApiAuthSplatRoute
 }
 export interface FileRoutesById {
@@ -106,6 +114,7 @@ export interface FileRoutesById {
   "/(auth)/sign-in": typeof authSignInRoute
   "/(auth)/sign-up": typeof authSignUpRoute
   "/(auth)/verify-email": typeof authVerifyEmailRoute
+  "/_app/websites": typeof AppWebsitesRoute
   "/api/auth/$": typeof ApiAuthSplatRoute
 }
 export interface FileRouteTypes {
@@ -120,6 +129,7 @@ export interface FileRouteTypes {
     | "/sign-in"
     | "/sign-up"
     | "/verify-email"
+    | "/websites"
     | "/api/auth/$"
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -132,6 +142,7 @@ export interface FileRouteTypes {
     | "/sign-in"
     | "/sign-up"
     | "/verify-email"
+    | "/websites"
     | "/api/auth/$"
   id:
     | "__root__"
@@ -144,6 +155,7 @@ export interface FileRouteTypes {
     | "/(auth)/sign-in"
     | "/(auth)/sign-up"
     | "/(auth)/verify-email"
+    | "/_app/websites"
     | "/api/auth/$"
   fileRoutesById: FileRoutesById
 }
@@ -157,6 +169,7 @@ export interface RootRouteChildren {
   authSignInRoute: typeof authSignInRoute
   authSignUpRoute: typeof authSignUpRoute
   authVerifyEmailRoute: typeof authVerifyEmailRoute
+  AppWebsitesRoute: typeof AppWebsitesRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
 
@@ -181,6 +194,13 @@ declare module "@tanstack/react-router" {
       path: "/"
       fullPath: "/"
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    "/_app/websites": {
+      id: "/_app/websites"
+      path: "/websites"
+      fullPath: "/websites"
+      preLoaderRoute: typeof AppWebsitesRouteImport
       parentRoute: typeof rootRouteImport
     }
     "/(auth)/verify-email": {
@@ -245,6 +265,7 @@ const rootRouteChildren: RootRouteChildren = {
   authSignInRoute: authSignInRoute,
   authSignUpRoute: authSignUpRoute,
   authVerifyEmailRoute: authVerifyEmailRoute,
+  AppWebsitesRoute: AppWebsitesRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
 }
 export const routeTree = rootRouteImport
