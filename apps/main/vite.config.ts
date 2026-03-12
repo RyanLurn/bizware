@@ -11,6 +11,7 @@ export default defineConfig({
     tanstackStart({
       router: {
         quoteStyle: "double",
+        semicolons: true,
       },
     }),
     react({
