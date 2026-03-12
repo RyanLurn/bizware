@@ -117,6 +117,17 @@
         "typescript": "catalog:",
       },
     },
+    "packages/randomizer": {
+      "name": "@bizware/randomizer",
+      "devDependencies": {
+        "@bizware/common": "workspace:*",
+        "@bizware/eslint": "workspace:*",
+        "@bizware/typescript": "workspace:*",
+        "@types/bun": "catalog:types",
+        "eslint": "catalog:",
+        "typescript": "catalog:",
+      },
+    },
     "packages/ui": {
       "name": "@bizware/ui",
       "dependencies": {
@@ -296,6 +307,8 @@
     "@bizware/main": ["@bizware/main@workspace:apps/main"],
 
     "@bizware/nickname": ["@bizware/nickname@workspace:packages/nickname"],
+
+    "@bizware/randomizer": ["@bizware/randomizer@workspace:packages/randomizer"],
 
     "@bizware/typescript": ["@bizware/typescript@workspace:configs/typescript"],
 

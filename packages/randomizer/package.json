@@ -1,0 +1,20 @@
+{
+  "name": "@bizware/randomizer",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "try": "bun test/try.ts",
+    "check-types": "bunx tsc --noEmit",
+    "lint": "bunx eslint --cache",
+    "lint:fix": "bunx eslint --cache --fix",
+    "check": "bun run check-types && bun run lint"
+  },
+  "devDependencies": {
+    "@bizware/common": "workspace:*",
+    "@bizware/eslint": "workspace:*",
+    "@bizware/typescript": "workspace:*",
+    "@types/bun": "catalog:types",
+    "eslint": "catalog:",
+    "typescript": "catalog:"
+  }
+}
