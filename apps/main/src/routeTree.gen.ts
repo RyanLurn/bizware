@@ -8,117 +8,123 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from "./routes/__root"
-import { Route as WelcomeRouteImport } from "./routes/welcome"
-import { Route as DashboardRouteImport } from "./routes/dashboard"
-import { Route as IndexRouteImport } from "./routes/index"
-import { Route as AppWebsitesRouteImport } from "./routes/_app/websites"
-import { Route as authVerifyEmailRouteImport } from "./routes/(auth)/verify-email"
-import { Route as authSignUpRouteImport } from "./routes/(auth)/sign-up"
-import { Route as authSignInRouteImport } from "./routes/(auth)/sign-in"
-import { Route as authResetPasswordRouteImport } from "./routes/(auth)/reset-password"
-import { Route as authInvalidTokenRouteImport } from "./routes/(auth)/invalid-token"
-import { Route as authForgotPasswordRouteImport } from "./routes/(auth)/forgot-password"
-import { Route as ApiAuthSplatRouteImport } from "./routes/api/auth/$"
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as WelcomeRouteImport } from "./routes/welcome";
+import { Route as DashboardRouteImport } from "./routes/dashboard";
+import { Route as AppRouteRouteImport } from "./routes/_app/route";
+import { Route as IndexRouteImport } from "./routes/index";
+import { Route as AppWebsitesRouteImport } from "./routes/_app/websites";
+import { Route as authVerifyEmailRouteImport } from "./routes/(auth)/verify-email";
+import { Route as authSignUpRouteImport } from "./routes/(auth)/sign-up";
+import { Route as authSignInRouteImport } from "./routes/(auth)/sign-in";
+import { Route as authResetPasswordRouteImport } from "./routes/(auth)/reset-password";
+import { Route as authInvalidTokenRouteImport } from "./routes/(auth)/invalid-token";
+import { Route as authForgotPasswordRouteImport } from "./routes/(auth)/forgot-password";
+import { Route as ApiAuthSplatRouteImport } from "./routes/api/auth/$";
 
 const WelcomeRoute = WelcomeRouteImport.update({
   id: "/welcome",
   path: "/welcome",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const DashboardRoute = DashboardRouteImport.update({
   id: "/dashboard",
   path: "/dashboard",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
+const AppRouteRoute = AppRouteRouteImport.update({
+  id: "/_app",
+  getParentRoute: () => rootRouteImport,
+} as any);
 const IndexRoute = IndexRouteImport.update({
   id: "/",
   path: "/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const AppWebsitesRoute = AppWebsitesRouteImport.update({
-  id: "/_app/websites",
+  id: "/websites",
   path: "/websites",
-  getParentRoute: () => rootRouteImport,
-} as any)
+  getParentRoute: () => AppRouteRoute,
+} as any);
 const authVerifyEmailRoute = authVerifyEmailRouteImport.update({
   id: "/(auth)/verify-email",
   path: "/verify-email",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const authSignUpRoute = authSignUpRouteImport.update({
   id: "/(auth)/sign-up",
   path: "/sign-up",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const authSignInRoute = authSignInRouteImport.update({
   id: "/(auth)/sign-in",
   path: "/sign-in",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const authResetPasswordRoute = authResetPasswordRouteImport.update({
   id: "/(auth)/reset-password",
   path: "/reset-password",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const authInvalidTokenRoute = authInvalidTokenRouteImport.update({
   id: "/(auth)/invalid-token",
   path: "/invalid-token",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const authForgotPasswordRoute = authForgotPasswordRouteImport.update({
   id: "/(auth)/forgot-password",
   path: "/forgot-password",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: "/api/auth/$",
   path: "/api/auth/$",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 
 export interface FileRoutesByFullPath {
-  "/": typeof IndexRoute
-  "/dashboard": typeof DashboardRoute
-  "/welcome": typeof WelcomeRoute
-  "/forgot-password": typeof authForgotPasswordRoute
-  "/invalid-token": typeof authInvalidTokenRoute
-  "/reset-password": typeof authResetPasswordRoute
-  "/sign-in": typeof authSignInRoute
-  "/sign-up": typeof authSignUpRoute
-  "/verify-email": typeof authVerifyEmailRoute
-  "/websites": typeof AppWebsitesRoute
-  "/api/auth/$": typeof ApiAuthSplatRoute
+  "/": typeof IndexRoute;
+  "/dashboard": typeof DashboardRoute;
+  "/welcome": typeof WelcomeRoute;
+  "/forgot-password": typeof authForgotPasswordRoute;
+  "/invalid-token": typeof authInvalidTokenRoute;
+  "/reset-password": typeof authResetPasswordRoute;
+  "/sign-in": typeof authSignInRoute;
+  "/sign-up": typeof authSignUpRoute;
+  "/verify-email": typeof authVerifyEmailRoute;
+  "/websites": typeof AppWebsitesRoute;
+  "/api/auth/$": typeof ApiAuthSplatRoute;
 }
 export interface FileRoutesByTo {
-  "/": typeof IndexRoute
-  "/dashboard": typeof DashboardRoute
-  "/welcome": typeof WelcomeRoute
-  "/forgot-password": typeof authForgotPasswordRoute
-  "/invalid-token": typeof authInvalidTokenRoute
-  "/reset-password": typeof authResetPasswordRoute
-  "/sign-in": typeof authSignInRoute
-  "/sign-up": typeof authSignUpRoute
-  "/verify-email": typeof authVerifyEmailRoute
-  "/websites": typeof AppWebsitesRoute
-  "/api/auth/$": typeof ApiAuthSplatRoute
+  "/": typeof IndexRoute;
+  "/dashboard": typeof DashboardRoute;
+  "/welcome": typeof WelcomeRoute;
+  "/forgot-password": typeof authForgotPasswordRoute;
+  "/invalid-token": typeof authInvalidTokenRoute;
+  "/reset-password": typeof authResetPasswordRoute;
+  "/sign-in": typeof authSignInRoute;
+  "/sign-up": typeof authSignUpRoute;
+  "/verify-email": typeof authVerifyEmailRoute;
+  "/websites": typeof AppWebsitesRoute;
+  "/api/auth/$": typeof ApiAuthSplatRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  "/": typeof IndexRoute
-  "/dashboard": typeof DashboardRoute
-  "/welcome": typeof WelcomeRoute
-  "/(auth)/forgot-password": typeof authForgotPasswordRoute
-  "/(auth)/invalid-token": typeof authInvalidTokenRoute
-  "/(auth)/reset-password": typeof authResetPasswordRoute
-  "/(auth)/sign-in": typeof authSignInRoute
-  "/(auth)/sign-up": typeof authSignUpRoute
-  "/(auth)/verify-email": typeof authVerifyEmailRoute
-  "/_app/websites": typeof AppWebsitesRoute
-  "/api/auth/$": typeof ApiAuthSplatRoute
+  __root__: typeof rootRouteImport;
+  "/": typeof IndexRoute;
+  "/_app": typeof AppRouteRouteWithChildren;
+  "/dashboard": typeof DashboardRoute;
+  "/welcome": typeof WelcomeRoute;
+  "/(auth)/forgot-password": typeof authForgotPasswordRoute;
+  "/(auth)/invalid-token": typeof authInvalidTokenRoute;
+  "/(auth)/reset-password": typeof authResetPasswordRoute;
+  "/(auth)/sign-in": typeof authSignInRoute;
+  "/(auth)/sign-up": typeof authSignUpRoute;
+  "/(auth)/verify-email": typeof authVerifyEmailRoute;
+  "/_app/websites": typeof AppWebsitesRoute;
+  "/api/auth/$": typeof ApiAuthSplatRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
+  fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
     | "/"
     | "/dashboard"
@@ -130,8 +136,8 @@ export interface FileRouteTypes {
     | "/sign-up"
     | "/verify-email"
     | "/websites"
-    | "/api/auth/$"
-  fileRoutesByTo: FileRoutesByTo
+    | "/api/auth/$";
+  fileRoutesByTo: FileRoutesByTo;
   to:
     | "/"
     | "/dashboard"
@@ -143,10 +149,11 @@ export interface FileRouteTypes {
     | "/sign-up"
     | "/verify-email"
     | "/websites"
-    | "/api/auth/$"
+    | "/api/auth/$";
   id:
     | "__root__"
     | "/"
+    | "/_app"
     | "/dashboard"
     | "/welcome"
     | "/(auth)/forgot-password"
@@ -156,107 +163,127 @@ export interface FileRouteTypes {
     | "/(auth)/sign-up"
     | "/(auth)/verify-email"
     | "/_app/websites"
-    | "/api/auth/$"
-  fileRoutesById: FileRoutesById
+    | "/api/auth/$";
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  DashboardRoute: typeof DashboardRoute
-  WelcomeRoute: typeof WelcomeRoute
-  authForgotPasswordRoute: typeof authForgotPasswordRoute
-  authInvalidTokenRoute: typeof authInvalidTokenRoute
-  authResetPasswordRoute: typeof authResetPasswordRoute
-  authSignInRoute: typeof authSignInRoute
-  authSignUpRoute: typeof authSignUpRoute
-  authVerifyEmailRoute: typeof authVerifyEmailRoute
-  AppWebsitesRoute: typeof AppWebsitesRoute
-  ApiAuthSplatRoute: typeof ApiAuthSplatRoute
+  IndexRoute: typeof IndexRoute;
+  AppRouteRoute: typeof AppRouteRouteWithChildren;
+  DashboardRoute: typeof DashboardRoute;
+  WelcomeRoute: typeof WelcomeRoute;
+  authForgotPasswordRoute: typeof authForgotPasswordRoute;
+  authInvalidTokenRoute: typeof authInvalidTokenRoute;
+  authResetPasswordRoute: typeof authResetPasswordRoute;
+  authSignInRoute: typeof authSignInRoute;
+  authSignUpRoute: typeof authSignUpRoute;
+  authVerifyEmailRoute: typeof authVerifyEmailRoute;
+  ApiAuthSplatRoute: typeof ApiAuthSplatRoute;
 }
 
 declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
     "/welcome": {
-      id: "/welcome"
-      path: "/welcome"
-      fullPath: "/welcome"
-      preLoaderRoute: typeof WelcomeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: "/welcome";
+      path: "/welcome";
+      fullPath: "/welcome";
+      preLoaderRoute: typeof WelcomeRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/dashboard": {
-      id: "/dashboard"
-      path: "/dashboard"
-      fullPath: "/dashboard"
-      preLoaderRoute: typeof DashboardRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: "/dashboard";
+      path: "/dashboard";
+      fullPath: "/dashboard";
+      preLoaderRoute: typeof DashboardRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/_app": {
+      id: "/_app";
+      path: "";
+      fullPath: "/";
+      preLoaderRoute: typeof AppRouteRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/": {
-      id: "/"
-      path: "/"
-      fullPath: "/"
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/_app/websites": {
-      id: "/_app/websites"
-      path: "/websites"
-      fullPath: "/websites"
-      preLoaderRoute: typeof AppWebsitesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: "/_app/websites";
+      path: "/websites";
+      fullPath: "/websites";
+      preLoaderRoute: typeof AppWebsitesRouteImport;
+      parentRoute: typeof AppRouteRoute;
+    };
     "/(auth)/verify-email": {
-      id: "/(auth)/verify-email"
-      path: "/verify-email"
-      fullPath: "/verify-email"
-      preLoaderRoute: typeof authVerifyEmailRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: "/(auth)/verify-email";
+      path: "/verify-email";
+      fullPath: "/verify-email";
+      preLoaderRoute: typeof authVerifyEmailRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/(auth)/sign-up": {
-      id: "/(auth)/sign-up"
-      path: "/sign-up"
-      fullPath: "/sign-up"
-      preLoaderRoute: typeof authSignUpRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: "/(auth)/sign-up";
+      path: "/sign-up";
+      fullPath: "/sign-up";
+      preLoaderRoute: typeof authSignUpRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/(auth)/sign-in": {
-      id: "/(auth)/sign-in"
-      path: "/sign-in"
-      fullPath: "/sign-in"
-      preLoaderRoute: typeof authSignInRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: "/(auth)/sign-in";
+      path: "/sign-in";
+      fullPath: "/sign-in";
+      preLoaderRoute: typeof authSignInRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/(auth)/reset-password": {
-      id: "/(auth)/reset-password"
-      path: "/reset-password"
-      fullPath: "/reset-password"
-      preLoaderRoute: typeof authResetPasswordRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: "/(auth)/reset-password";
+      path: "/reset-password";
+      fullPath: "/reset-password";
+      preLoaderRoute: typeof authResetPasswordRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/(auth)/invalid-token": {
-      id: "/(auth)/invalid-token"
-      path: "/invalid-token"
-      fullPath: "/invalid-token"
-      preLoaderRoute: typeof authInvalidTokenRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: "/(auth)/invalid-token";
+      path: "/invalid-token";
+      fullPath: "/invalid-token";
+      preLoaderRoute: typeof authInvalidTokenRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/(auth)/forgot-password": {
-      id: "/(auth)/forgot-password"
-      path: "/forgot-password"
-      fullPath: "/forgot-password"
-      preLoaderRoute: typeof authForgotPasswordRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: "/(auth)/forgot-password";
+      path: "/forgot-password";
+      fullPath: "/forgot-password";
+      preLoaderRoute: typeof authForgotPasswordRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/api/auth/$": {
-      id: "/api/auth/$"
-      path: "/api/auth/$"
-      fullPath: "/api/auth/$"
-      preLoaderRoute: typeof ApiAuthSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: "/api/auth/$";
+      path: "/api/auth/$";
+      fullPath: "/api/auth/$";
+      preLoaderRoute: typeof ApiAuthSplatRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
   }
 }
 
+interface AppRouteRouteChildren {
+  AppWebsitesRoute: typeof AppWebsitesRoute;
+}
+
+const AppRouteRouteChildren: AppRouteRouteChildren = {
+  AppWebsitesRoute: AppWebsitesRoute,
+};
+
+const AppRouteRouteWithChildren = AppRouteRoute._addFileChildren(
+  AppRouteRouteChildren,
+);
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AppRouteRoute: AppRouteRouteWithChildren,
   DashboardRoute: DashboardRoute,
   WelcomeRoute: WelcomeRoute,
   authForgotPasswordRoute: authForgotPasswordRoute,
@@ -265,18 +292,17 @@ const rootRouteChildren: RootRouteChildren = {
   authSignInRoute: authSignInRoute,
   authSignUpRoute: authSignUpRoute,
   authVerifyEmailRoute: authVerifyEmailRoute,
-  AppWebsitesRoute: AppWebsitesRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
-}
+};
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
 
-import type { getRouter } from "./router.tsx"
-import type { createStart } from "@tanstack/react-start"
+import type { getRouter } from "./router.tsx";
+import type { createStart } from "@tanstack/react-start";
 declare module "@tanstack/react-start" {
   interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
+    ssr: true;
+    router: Awaited<ReturnType<typeof getRouter>>;
   }
 }
