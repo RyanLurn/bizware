@@ -6,7 +6,7 @@ export const WebsiteSchema = z.object({
   id: z.string(),
 });
 
-type Website = z.infer<typeof WebsiteSchema>;
+export type Website = z.infer<typeof WebsiteSchema>;
 
 type MockDb = {
   websites: Website[];
