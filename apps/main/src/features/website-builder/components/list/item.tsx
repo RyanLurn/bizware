@@ -14,7 +14,7 @@ export function WebsiteListItem({
   ...props
 }: WebsiteListItemProps) {
   return (
-    <div className={cn("flex items-center p-2", className)} {...props}>
+    <div className={cn("flex w-full items-center p-4", className)} {...props}>
       <div className="aspect-video h-full bg-black/35" />
       <div className="flex flex-1 flex-col gap-1">
         <h1 className="text-lg font-semibold">{website.name}</h1>
