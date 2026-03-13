@@ -16,7 +16,7 @@ export function WebsiteList({
   ...props
 }: WebsiteListProps) {
   return (
-    <div className={cn("flex flex-col gap-2", className)} {...props}>
+    <div className={cn("flex flex-col gap-2 p-10", className)} {...props}>
       {websites.map((website) => (
         <WebsiteListItem website={website} key={website.id} />
       ))}

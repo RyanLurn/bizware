@@ -14,11 +14,14 @@ export function WebsiteListItem({
   ...props
 }: WebsiteListItemProps) {
   return (
-    <div className={cn("flex w-full items-center p-4", className)} {...props}>
-      <div className="aspect-video h-full bg-black/35" />
-      <div className="flex flex-1 flex-col gap-1">
-        <h1 className="text-lg font-semibold">{website.name}</h1>
-        <p className="text-sm text-muted-foreground">{website.domain}</p>
+    <div
+      className={cn("flex h-64 w-full items-center p-4", className)}
+      {...props}
+    >
+      <div className="aspect-video h-full bg-gray-500" />
+      <div className="flex flex-1 flex-col gap-1 p-10">
+        <h1 className="text-2xl font-semibold">{website.name}</h1>
+        <p className="text-lg text-muted-foreground">{website.domain}</p>
       </div>
     </div>
   );
