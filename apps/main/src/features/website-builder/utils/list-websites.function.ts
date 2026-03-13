@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 
-import { getUser } from "@/lib/server-functions/get-user";
+import { getUser } from "@/features/auth/utils/get-user";
 import { mockDb } from "@/lib/mock-db";
 
 export const listWebsites = createServerFn().handler(async () => {

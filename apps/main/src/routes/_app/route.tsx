@@ -1,7 +1,7 @@
 import { createFileRoute, redirect, Outlet } from "@tanstack/react-router";
 import { z } from "zod";
 
-import { getUser } from "@/lib/server-functions/get-user";
+import { getUser } from "@/features/auth/utils/get-user";
 
 export const Route = createFileRoute("/_app")({
   beforeLoad: async ({ search }) => {
