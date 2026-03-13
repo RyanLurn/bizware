@@ -5,6 +5,8 @@ import { redirect } from "@tanstack/react-router";
 import { auth } from "@/features/auth";
 
 export const getUser = createServerFn().handler(async () => {
+  console.log("getUser is called!");
+
   const getSessionResult = await auth.api.getSession({
     // Inferred as any by typescript-eslint
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
