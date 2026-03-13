@@ -11,6 +11,12 @@ import {
 
 const env = createEnv({
   server: {
+    ENABLE_DRIZZLE_LOG: z.stringbool().catch(() => {
+      if (process.env.NODE_ENV === "production") {
+        return false;
+      }
+      return true;
+    }),
     NEON_POOLED_CONNECTION_STRING: z.url(),
   },
   runtimeEnv: process.env,
@@ -18,4 +24,5 @@ const env = createEnv({
 
 export const db = drizzle(env.NEON_POOLED_CONNECTION_STRING, {
   schema: { verificationTable, sessionTable, accountTable, userTable },
+  logger: env.ENABLE_DRIZZLE_LOG,
 });
