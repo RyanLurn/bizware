@@ -2,7 +2,7 @@ import type { ComponentProps } from "react";
 
 import { PanelLeftIcon } from "lucide-react";
 
-import { useSidebar } from "@/components/sidebar";
+import { useSidebar } from "@/features/sidebar/hook";
 import { Button } from "@/components/button";
 import { cn } from "@/lib/utils";
 
