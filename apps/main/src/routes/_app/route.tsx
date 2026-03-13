@@ -1,4 +1,4 @@
-import { createFileRoute, redirect } from "@tanstack/react-router";
+import { createFileRoute, redirect, Outlet } from "@tanstack/react-router";
 import { z } from "zod";
 
 import { getUser } from "@/lib/server-functions/get-user";
@@ -19,5 +19,9 @@ export const Route = createFileRoute("/_app")({
 });
 
 function AppLayout() {
-  return <div>Hello "/_app"!</div>;
+  return (
+    <div className="h-dvh w-dvw">
+      <Outlet />
+    </div>
+  );
 }
