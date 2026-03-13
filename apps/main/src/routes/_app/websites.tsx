@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { listWebsites } from "@/features/website-builder/utils/list-websites.function";
+import { listWebsites } from "@/features/website-builder/utils/list-websites";
 import { WebsiteList } from "@/features/website-builder/components/list";
 
 export const Route = createFileRoute("/_app/websites")({
