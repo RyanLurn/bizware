@@ -1,0 +1,29 @@
+import type { ComponentProps } from "react";
+
+import { mergeProps, useRender } from "@base-ui/react";
+
+import { cn } from "@/lib/utils";
+
+export function SidebarGroupAction({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"button"> & ComponentProps<"button">) {
+  return useRender({
+    props: mergeProps<"button">(
+      {
+        className: cn(
+          "absolute top-3.5 right-3 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground ring-sidebar-ring outline-hidden transition-transform group-data-[collapsible=icon]:hidden after:absolute after:-inset-2 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 md:after:hidden [&>svg]:size-4 [&>svg]:shrink-0",
+          className
+        ),
+      },
+      props
+    ),
+    state: {
+      slot: "sidebar-group-action",
+      sidebar: "group-action",
+    },
+    defaultTagName: "button",
+    render,
+  });
+}
